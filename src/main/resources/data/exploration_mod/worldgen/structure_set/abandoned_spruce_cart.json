@@ -21,4 +21,4 @@
     // The kind of placement to use. The other kind is ring based like strongholds use.
     "type": "minecraft:random_spread"
   }
-`}`
+}
