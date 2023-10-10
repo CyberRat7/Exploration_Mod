@@ -1,8 +1,8 @@
 package net.explorationmod.cyber2000;
 
 import com.mojang.logging.LogUtils;
+import net.explorationmod.cyber2000.core.registry.object.EItems;
 import net.explorationmod.cyber2000.core.registry.object.EPaintings;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -22,9 +22,8 @@ public class ExplorationMod {
 
     public ExplorationMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        EItems.register(modEventBus);
         EPaintings.register(modEventBus);
-
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

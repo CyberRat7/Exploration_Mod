@@ -1,4 +1,4 @@
-package net.explorationmod.cyber2000.core.log;
+package net.explorationmod.cyber2000.core.util.log;
 
 import net.explorationmod.cyber2000.ExplorationMod;
 

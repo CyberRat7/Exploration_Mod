@@ -1,6 +1,6 @@
 package net.explorationmod.cyber2000.core.registry.object;
 
-import net.explorationmod.cyber2000.core.log.InfoLoggable;
+import net.explorationmod.cyber2000.core.util.log.InfoLoggable;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 

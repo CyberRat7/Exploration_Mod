@@ -1,4 +1,4 @@
-package net.explorationmod.cyber2000.core.registry.factory.painting;
+package net.explorationmod.cyber2000.core.registry.factory;
 
 import net.explorationmod.cyber2000.core.registry.factory.ObjectFactory;
 import net.explorationmod.cyber2000.core.registry.object.EPaintings;
