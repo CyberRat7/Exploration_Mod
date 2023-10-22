@@ -1,6 +1,7 @@
 package net.explorationmod.cyber2000;
 
 import com.mojang.logging.LogUtils;
+import net.explorationmod.cyber2000.core.registry.object.VentureCreativeTabs;
 import net.explorationmod.cyber2000.core.registry.object.VentureItems;
 import net.explorationmod.cyber2000.core.registry.object.VenturePaintings;
 import net.explorationmod.cyber2000.core.registry.object.VentureSoundEvents;
@@ -37,6 +38,7 @@ public class Venture {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        VentureCreativeTabs.register(event);
     }
 
     @SubscribeEvent
