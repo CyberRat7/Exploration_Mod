@@ -7,7 +7,8 @@ import java.util.List;
 
 public class VentureCreativeTabs {
     public static void register(BuildCreativeModeTabContentsEvent event) {
-        final CreativeTabAdder tabAdder = new CreativeTabAdder(event);
+
+        CreativeTabAdder tabAdder = new CreativeTabAdder(event);
         tabAdder.addAllToIngredients(List.of(
                 VentureItems.FROZEN_NAUTILUS_SHELL,
                 VentureItems.FROZEN_COD,
@@ -15,5 +16,11 @@ public class VentureCreativeTabs {
                 VentureItems.FROZEN_TRIDENT,
                 VentureItems.FROZEN_SALMON
         ));
+
+        tabAdder = new CreativeTabAdder(event);
+        tabAdder.addAllToTools(List.of(
+                VentureItems.FROZEN_DISC
+        ));
+
     }
 }
