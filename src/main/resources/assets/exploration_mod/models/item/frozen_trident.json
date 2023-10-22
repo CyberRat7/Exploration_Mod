@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "exploration_mod:item/frozen_trident"
-  }
-}
