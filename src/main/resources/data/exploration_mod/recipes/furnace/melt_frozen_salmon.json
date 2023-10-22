@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "exploration_mod:frozen_salmon"
+  },
+  "result": "minecraft:salmon",
+  "experience": 0.15,
+  "cookingtime": 400
+}

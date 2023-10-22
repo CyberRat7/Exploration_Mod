@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "exploration_mod:frozen_emerald"
+  },
+  "result": "minecraft:cod",
+  "experience": 0.15,
+  "cookingtime": 400
+}

@@ -14,6 +14,7 @@ public class EItems {
     public static final RegistryObject<Item> FROZEN_EMERALD = ITEMS.register("frozen_emerald", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FROZEN_SALMON = ITEMS.register("frozen_salmon", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FROZEN_COD = ITEMS.register("frozen_cod", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = ITEMS.register("frozen_nautilus_shell", () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         LoggingRegistry.register(ITEMS, eventBus);
     }

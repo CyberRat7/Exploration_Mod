@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "exploration_mod:frozen_trident"
+  },
+  "result": "minecraft:trident",
+  "experience": 0.15,
+  "cookingtime": 400
+}
