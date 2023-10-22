@@ -1,4 +1,4 @@
-package net.explorationmod.cyber2000.core.registry.object;
+package net.explorationmod.cyber2000.core.util.log;
 
 import net.explorationmod.cyber2000.core.util.log.InfoLoggable;
 import net.minecraftforge.eventbus.api.IEventBus;

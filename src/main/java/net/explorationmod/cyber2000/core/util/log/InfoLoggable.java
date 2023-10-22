@@ -1,6 +1,6 @@
 package net.explorationmod.cyber2000.core.util.log;
 
-import net.explorationmod.cyber2000.ExplorationMod;
+import net.explorationmod.cyber2000.Venture;
 
 public class InfoLoggable implements Loggable{
     private final String name;
@@ -11,7 +11,7 @@ public class InfoLoggable implements Loggable{
 
     @Override
     public void log() {
-        ExplorationMod.logger.info("Loading {}!", name);
-        ExplorationMod.logger.info("Loading was successfully finished!");
+        Venture.logger.info("Loading {}!", name);
+        Venture.logger.info("Loading was successfully finished!");
     }
 }
