@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "venture:frozen_nautilus_shell"
+  },
+  "result": "minecraft:nautilus_shell",
+  "experience": 0.15,
+  "cookingtime": 400
+}
