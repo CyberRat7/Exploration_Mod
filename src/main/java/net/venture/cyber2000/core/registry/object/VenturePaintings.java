@@ -1,8 +1,8 @@
-package net.explorationmod.cyber2000.core.registry.object;
+package net.venture.cyber2000.core.registry.object;
 
-import net.explorationmod.cyber2000.Venture;
-import net.explorationmod.cyber2000.core.registry.factory.DefaultPaintingFactory;
-import net.explorationmod.cyber2000.core.util.log.LoggingRegistry;
+import net.venture.cyber2000.Venture;
+import net.venture.cyber2000.core.registry.factory.DefaultPaintingFactory;
+import net.venture.cyber2000.core.util.log.LoggingRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.eventbus.api.IEventBus;

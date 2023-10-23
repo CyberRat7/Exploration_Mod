@@ -1,4 +1,4 @@
-package net.explorationmod.cyber2000.core.util.creative;
+package net.venture.cyber2000.core.util.creative;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;

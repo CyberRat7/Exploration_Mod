@@ -1,6 +1,6 @@
-package net.explorationmod.cyber2000.core.registry.factory.item;
+package net.venture.cyber2000.core.registry.factory.item;
 
-import net.explorationmod.cyber2000.core.registry.factory.DefaultItemFactory;
+import net.venture.cyber2000.core.registry.factory.DefaultItemFactory;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;

@@ -1,6 +1,6 @@
-package net.explorationmod.cyber2000.core.util.log;
+package net.venture.cyber2000.core.util.log;
 
-import net.explorationmod.cyber2000.Venture;
+import net.venture.cyber2000.Venture;
 
 public class InfoLoggable implements Loggable{
     private final String name;

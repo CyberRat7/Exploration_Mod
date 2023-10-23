@@ -1,4 +1,4 @@
-package net.explorationmod.cyber2000.core.util.log;
+package net.venture.cyber2000.core.util.log;
 
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
