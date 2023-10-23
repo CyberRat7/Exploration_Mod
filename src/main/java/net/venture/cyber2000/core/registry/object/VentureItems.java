@@ -1,7 +1,7 @@
-package net.explorationmod.cyber2000.core.registry.object;
+package net.venture.cyber2000.core.registry.object;
 
-import net.explorationmod.cyber2000.Venture;
-import net.explorationmod.cyber2000.core.util.log.LoggingRegistry;
+import net.venture.cyber2000.Venture;
+import net.venture.cyber2000.core.util.log.LoggingRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
