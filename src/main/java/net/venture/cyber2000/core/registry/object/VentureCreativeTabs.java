@@ -7,7 +7,6 @@ import java.util.List;
 
 public class VentureCreativeTabs {
     public static void register(BuildCreativeModeTabContentsEvent event) {
-
         CreativeTabAdder tabAdder = new CreativeTabAdder(event);
         tabAdder.addAllToIngredients(List.of(
                 VentureItems.FROZEN_NAUTILUS_SHELL,
