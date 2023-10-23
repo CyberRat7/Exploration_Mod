@@ -1,7 +1,6 @@
 package net.venture.cyber2000.core.registry.object;
 
 import net.minecraft.world.item.BowlFoodItem;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.RecordItem;
 import net.venture.cyber2000.Venture;
 import net.venture.cyber2000.core.registry.factory.DefaultItemFactory;
