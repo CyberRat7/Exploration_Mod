@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "venture:frozen_nautilus_shell"
+    "item": "venture:frozen_pufferfish"
   },
-  "result": "minecraft:nautilus_shell",
+  "result": "minecraft:pufferfish",
   "experience": 0.15,
   "cookingtime": 250
 }

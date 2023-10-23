@@ -14,6 +14,7 @@ public class VentureCreativeTabs {
                 VentureItems.FROZEN_EMERALD,
                 VentureItems.FROZEN_TRIDENT,
                 VentureItems.FROZEN_SALMON,
+                VentureItems.FROZEN_PUFFERFISH,
                 VentureItems.NETTLE_LEAVES
         ));
 
