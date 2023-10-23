@@ -1,0 +1,10 @@
+{
+"music_box": {
+"sounds": [
+{
+"name": "venture:frozen_disc_sound",
+"stream": true
+    }
+   ]
+  }
+}

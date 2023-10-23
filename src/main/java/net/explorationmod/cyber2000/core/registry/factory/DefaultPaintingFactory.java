@@ -1,6 +1,5 @@
 package net.explorationmod.cyber2000.core.registry.factory;
 
-import net.explorationmod.cyber2000.core.registry.object.VenturePaintings;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.registries.RegistryObject;
 
