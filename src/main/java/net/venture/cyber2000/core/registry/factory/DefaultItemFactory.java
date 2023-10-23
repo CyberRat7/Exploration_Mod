@@ -8,6 +8,10 @@ import java.util.function.Supplier;
 import static net.venture.cyber2000.core.registry.object.VentureItems.ITEMS;
 
 public interface DefaultItemFactory extends ObjectFactory {
+    static RegistryObject<Item> create(String name) {
+        return create(name, () -> new Item(new Item.Properties()));
+    }
+
     static RegistryObject<Item> create(String name, Item.Properties properties) {
         return create(name, () -> new Item(properties));
     }

@@ -16,13 +16,13 @@ import net.minecraftforge.registries.RegistryObject;
 public class VentureItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, Venture.MOD_ID);
 
-    public static final RegistryObject<Item> FROZEN_TRIDENT = DefaultItemFactory.create("frozen_trident", new Item.Properties());
-    public static final RegistryObject<Item> FROZEN_EMERALD = DefaultItemFactory.create("frozen_emerald", new Item.Properties());
-    public static final RegistryObject<Item> FROZEN_SALMON = DefaultItemFactory.create("frozen_salmon", new Item.Properties());
-    public static final RegistryObject<Item> FROZEN_COD = DefaultItemFactory.create("frozen_cod", new Item.Properties());
-    public static final RegistryObject<Item> FROZEN_PUFFERFISH = DefaultItemFactory.create("frozen_pufferfish", new Item.Properties());
-    public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = DefaultItemFactory.create("frozen_nautilus_shell", new Item.Properties());
-    public static final RegistryObject<Item> NETTLE_LEAVES = DefaultItemFactory.create("nettle_leaves", new Item.Properties());
+    public static final RegistryObject<Item> FROZEN_TRIDENT = DefaultItemFactory.create("frozen_trident");
+    public static final RegistryObject<Item> FROZEN_EMERALD = DefaultItemFactory.create("frozen_emerald");
+    public static final RegistryObject<Item> FROZEN_SALMON = DefaultItemFactory.create("frozen_salmon");
+    public static final RegistryObject<Item> FROZEN_COD = DefaultItemFactory.create("frozen_cod");
+    public static final RegistryObject<Item> FROZEN_PUFFERFISH = DefaultItemFactory.create("frozen_pufferfish");
+    public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = DefaultItemFactory.create("frozen_nautilus_shell");
+    public static final RegistryObject<Item> NETTLE_LEAVES = DefaultItemFactory.create("nettle_leaves");
     public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = FoodItemFactory.createBowl("nettle_soup", 5, 4);
     public static final RegistryObject<RecordItem> FROZEN_DISC = MusicDiscFactory.create("frozen_disc", VentureSoundEvents.FROZEN_DISC_SOUND, 3, 1240);
 
