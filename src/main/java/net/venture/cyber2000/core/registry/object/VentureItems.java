@@ -21,6 +21,7 @@ public class VentureItems {
     public static final RegistryObject<Item> FROZEN_EMERALD = DefaultItemFactory.create("frozen_emerald", new Item.Properties());
     public static final RegistryObject<Item> FROZEN_SALMON = DefaultItemFactory.create("frozen_salmon", new Item.Properties());
     public static final RegistryObject<Item> FROZEN_COD = DefaultItemFactory.create("frozen_cod", new Item.Properties());
+    public static final RegistryObject<Item> FROZEN_PUFFERFISH = DefaultItemFactory.create("frozen_pufferfish", new Item.Properties());
     public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = DefaultItemFactory.create("frozen_nautilus_shell", new Item.Properties());
     public static final RegistryObject<Item> NETTLE_LEAVES = DefaultItemFactory.create("nettle_leaves", new Item.Properties());
     public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = FoodItemFactory.createBowl("nettle_soup", 5, 4);
