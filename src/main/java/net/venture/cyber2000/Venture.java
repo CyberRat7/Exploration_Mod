@@ -1,10 +1,7 @@
 package net.venture.cyber2000;
 
 import com.mojang.logging.LogUtils;
-import net.venture.cyber2000.core.registry.object.VentureCreativeTabs;
-import net.venture.cyber2000.core.registry.object.VentureItems;
-import net.venture.cyber2000.core.registry.object.VenturePaintings;
-import net.venture.cyber2000.core.registry.object.VentureSoundEvents;
+import net.venture.cyber2000.core.registry.object.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,6 +23,7 @@ public class Venture {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         //Registries
         VentureItems.register(modEventBus);
+        VentureBlocks.register(modEventBus);
         VenturePaintings.register(modEventBus);
         VentureSoundEvents.register(modEventBus);
         ////////////////////////////////////////////
