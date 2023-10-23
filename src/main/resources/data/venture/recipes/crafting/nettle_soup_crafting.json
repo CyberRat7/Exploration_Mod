@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "venture:nettle_leaves"
+    },
+    {
+      "item": "venture:nettle_leaves"
+    },
+    {
+      "item": "venture:nettle_leaves"
+    },
+    {
+      "item": "venture:nettle_leaves"
+    }
+  ],
+  "result": {
+    "item": "venture:nettle_soup"
+  }
+}

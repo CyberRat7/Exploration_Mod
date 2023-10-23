@@ -14,12 +14,18 @@ public class VentureCreativeTabs {
                 VentureItems.FROZEN_COD,
                 VentureItems.FROZEN_EMERALD,
                 VentureItems.FROZEN_TRIDENT,
-                VentureItems.FROZEN_SALMON
+                VentureItems.FROZEN_SALMON,
+                VentureItems.NETTLE_LEAVES
         ));
 
         tabAdder = new CreativeTabAdder(event);
         tabAdder.addAllToTools(List.of(
                 VentureItems.FROZEN_DISC
+        ));
+
+        tabAdder = new CreativeTabAdder(event);
+        tabAdder.addAllToFood(List.of(
+                VentureItems.NETTLE_SOUP
         ));
 
     }
