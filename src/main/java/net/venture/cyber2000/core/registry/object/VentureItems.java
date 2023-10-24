@@ -27,6 +27,6 @@ public class VentureItems {
     public static final RegistryObject<RecordItem> FROZEN_DISC = MusicDiscFactory.create("frozen_disc", VentureSoundEvents.FROZEN_DISC_SOUND, 3, 1240);
 
     public static void register(IEventBus eventBus) {
-        LoggingRegistry.register(ITEMS, eventBus);
+        LoggingRegistry.register(ITEMS, "items", eventBus);
     }
 }

@@ -17,16 +17,14 @@ public class VentureCreativeTabs {
                 VentureItems.FROZEN_PUFFERFISH,
                 VentureItems.NETTLE_LEAVES
         ));
-
-        tabAdder = new CreativeTabAdder(event);
         tabAdder.addAllToTools(List.of(
                 VentureItems.FROZEN_DISC
         ));
-
-        tabAdder = new CreativeTabAdder(event);
         tabAdder.addAllToFood(List.of(
                 VentureItems.NETTLE_SOUP
         ));
-
+        tabAdder.addAllToNaturalBlocks(List.of(
+                VentureBlocks.STINGING_NETTLE
+        ));
     }
 }
