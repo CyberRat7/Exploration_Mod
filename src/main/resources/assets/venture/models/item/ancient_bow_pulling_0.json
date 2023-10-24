@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "venture:item/ancient_bow_pulling_0"
+    }
+}

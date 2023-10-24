@@ -9,5 +9,8 @@
   "item.venture.frozen_nautilus_shell": "Frozen Nautilus Shell",
   "item.venture.nettle_leaves": "Nettle Leaves",
   "item.venture.nettle_soup": "Nettle Soup",
-  "block.venture.stinging_nettle": "Stinging Nettle"
+  "block.venture.stinging_nettle": "Stinging Nettle",
+
+  "item.venture.ancient_bow": "Ancient Bow",
+  "item.venture.ancient_arrow": "Ancient Arrow"
 }

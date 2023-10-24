@@ -20,6 +20,9 @@ public class VentureCreativeTabs {
         tabAdder.addAllToTools(List.of(
                 VentureItems.FROZEN_DISC
         ));
+        tabAdder.addAllToCombat(List.of(
+                VentureItems.ANCIENT_BOW
+        ));
         tabAdder.addAllToFood(List.of(
                 VentureItems.NETTLE_SOUP
         ));

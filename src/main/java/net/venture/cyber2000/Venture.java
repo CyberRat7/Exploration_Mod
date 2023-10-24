@@ -23,9 +23,11 @@ public class Venture {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         //Registries
         VentureItems.register(modEventBus);
+        VentureBlocks.register(modEventBus);
+        VentureEntityTypes.register(modEventBus);
+        VentureParticles.register(modEventBus);
         VenturePaintings.register(modEventBus);
         VentureSoundEvents.register(modEventBus);
-        VentureBlocks.register(modEventBus);
         ////////////////////////////////////////////
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -44,12 +46,5 @@ public class Venture {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-    }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-        }
     }
 }
