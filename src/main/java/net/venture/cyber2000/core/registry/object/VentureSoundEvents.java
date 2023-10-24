@@ -15,6 +15,6 @@ public class VentureSoundEvents {
     public static final RegistryObject<SoundEvent> FROZEN_DISC_SOUND = DefaultSoundEventFactory.create("frozen_disc_sound");
 
     public static void register(IEventBus eventBus) {
-        LoggingRegistry.register(SOUND_EVENTS, eventBus);
+        LoggingRegistry.register(SOUND_EVENTS, "sounds", eventBus);
     }
 }

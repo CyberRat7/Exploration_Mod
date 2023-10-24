@@ -16,6 +16,6 @@ public class VenturePaintings {
     public static final RegistryObject<PaintingVariant> EARTH = DefaultPaintingFactory.create32x32("world");
 
     public static void register(IEventBus eventBus) {
-        LoggingRegistry.register(PAINTING_VARIANTS, eventBus);
+        LoggingRegistry.register(PAINTING_VARIANTS, "paintings", eventBus);
     }
 }

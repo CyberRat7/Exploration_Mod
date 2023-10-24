@@ -23,9 +23,9 @@ public class Venture {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         //Registries
         VentureItems.register(modEventBus);
-        VentureBlocks.register(modEventBus);
         VenturePaintings.register(modEventBus);
         VentureSoundEvents.register(modEventBus);
+        VentureBlocks.register(modEventBus);
         ////////////////////////////////////////////
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
