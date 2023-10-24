@@ -33,6 +33,9 @@ public class Venture {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

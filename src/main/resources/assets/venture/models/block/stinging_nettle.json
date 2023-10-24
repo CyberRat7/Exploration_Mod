@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "venture:block/stinging_nettle"
+  },
+  "render_type": "cutout"
+}
