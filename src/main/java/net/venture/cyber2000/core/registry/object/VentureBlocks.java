@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.venture.cyber2000.Venture;
+import net.venture.cyber2000.core.registry.factory.DefaultBlockFactory;
 import net.venture.cyber2000.core.registry.factory.block.PlantableFactory;
 import net.venture.cyber2000.core.util.log.LoggingRegistry;
 
@@ -17,6 +18,8 @@ public class VentureBlocks {
 
     public static final RegistryObject<FlowerBlock> STINGING_NETTLE = PlantableFactory.createFlower("stinging_nettle",
             BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH).noOcclusion().noCollission(), () -> MobEffects.CONFUSION, 6);
+
+    public static final  RegistryObject<Block> BAG_OF_NETTLE_LEAVES = DefaultBlockFactory.create("bag_of_nettle_leaves", BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL));
 
     public static void register(IEventBus eventBus) {
         LoggingRegistry.register(BLOCKS, "blocks", eventBus);

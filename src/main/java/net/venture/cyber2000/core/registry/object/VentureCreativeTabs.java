@@ -28,7 +28,10 @@ public class VentureCreativeTabs {
                 VentureItems.NETTLE_SOUP
         ));
         tabAdder.addAllToNaturalBlocks(List.of(
-                VentureBlocks.STINGING_NETTLE
+                VentureBlocks.STINGING_NETTLE,
+                VentureBlocks.BAG_OF_NETTLE_LEAVES
+        ));
+        tabAdder.addAllToBuildingBlocks(List.of(
         ));
     }
 }

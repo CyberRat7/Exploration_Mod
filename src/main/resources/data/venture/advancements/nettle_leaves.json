@@ -15,7 +15,8 @@
   },
   "rewards": {
     "recipes": [
-      "venture:nettle_soup_crafting"
+      "venture:nettle_soup_crafting",
+      "venture:bag_of_nettle_leaves_crafting"
     ]
   }
 }
