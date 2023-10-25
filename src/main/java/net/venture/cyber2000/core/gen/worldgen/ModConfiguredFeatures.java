@@ -22,7 +22,7 @@ public class ModConfiguredFeatures {
     //Tries means how many of the flowers will spawn in a patch together, xzSpread and ySpread are how spread out the flowers in the patch are
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         ModConfiguredFeatureUtils.register(context, STINGING_NETTLE_KEY, Feature.FLOWER,
-                new RandomPatchConfiguration(6, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                new RandomPatchConfiguration(9, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                         new SimpleBlockConfiguration(BlockStateProvider.simple(VentureBlocks.STINGING_NETTLE.get())))));
     }
 }
