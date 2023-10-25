@@ -15,6 +15,7 @@ public class VentureCreativeTabs {
                 VentureItems.FROZEN_TRIDENT,
                 VentureItems.FROZEN_SALMON,
                 VentureItems.FROZEN_PUFFERFISH,
+                VentureItems.FROZEN_IRON_HORSE_ARMOR,
                 VentureItems.NETTLE_LEAVES
         ));
         tabAdder.addAllToTools(List.of(

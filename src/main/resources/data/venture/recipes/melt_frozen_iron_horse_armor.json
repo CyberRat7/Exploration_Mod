@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "venture:frozen_emerald"
+    "item": "venture:frozen_iron_horse_armor"
   },
-  "result": "minecraft:emerald",
+  "result": "minecraft:iron_horse_armor",
   "experience": 0.15,
   "cookingtime": 250
 }

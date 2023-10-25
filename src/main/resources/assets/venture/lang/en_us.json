@@ -1,5 +1,6 @@
 {
   "item.venture.frozen_trident": "Frozen Trident",
+  "item.venture.frozen_iron_horse_armor": "Frozen Iron Horse Armor",
   "item.venture.frozen_salmon": "Frozen Salmon",
   "item.venture.frozen_cod": "Frozen Cod",
   "item.venture.frozen_disc": "Music Disc",
@@ -10,7 +11,6 @@
   "item.venture.nettle_leaves": "Nettle Leaves",
   "item.venture.nettle_soup": "Nettle Soup",
   "block.venture.stinging_nettle": "Stinging Nettle",
-
   "item.venture.ancient_bow": "Ancient Bow",
   "item.venture.ancient_arrow": "Ancient Arrow"
 }
