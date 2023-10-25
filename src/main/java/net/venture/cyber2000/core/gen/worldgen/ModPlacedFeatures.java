@@ -18,7 +18,7 @@ public class ModPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         ModPlacedFeatureUtils.register(context, SEA_ASTER_PLACED, configuredFeatures.getOrThrow(ModConfiguredFeatures.STINGING_NETTLE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(14),
+                List.of(RarityFilter.onAverageOnceEvery(12),
                         InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
     }

@@ -29,7 +29,7 @@ public class VentureItems {
     public static final RegistryObject<Item> FROZEN_IRON_HORSE_ARMOR = DefaultItemFactory.create("frozen_iron_horse_armor");
     public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = DefaultItemFactory.create("frozen_nautilus_shell");
     public static final RegistryObject<Item> NETTLE_LEAVES = DefaultItemFactory.create("nettle_leaves");
-    public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = FoodItemFactory.createBowl("nettle_soup", 5, 4);
+    public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = FoodItemFactory.createBowl("nettle_soup", 5, 0.5f);
     public static final RegistryObject<RecordItem> FROZEN_DISC = MusicDiscFactory.create("frozen_disc", VentureSoundEvents.FROZEN_DISC_SOUND, 3, 1240);
 
     //EXPERIMENTAL
