@@ -1,6 +1,5 @@
 package net.venture.cyber2000.core.gen.datagen;
 
-
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
