@@ -1,6 +1,8 @@
 package net.venture.cyber2000;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.venture.cyber2000.core.registry.object.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -20,23 +22,25 @@ public class Venture {
     public static final Logger logger = LogUtils.getLogger();
 
     public Venture() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         //Registries
-        VentureItems.register(modEventBus);
-        VentureBlocks.register(modEventBus);
-        VentureEntityTypes.register(modEventBus);
-        VentureParticles.register(modEventBus);
-        VenturePaintings.register(modEventBus);
-        VentureSoundEvents.register(modEventBus);
+        VentureItems.register(eventBus);
+        VentureBlocks.register(eventBus);
+        VentureEntityTypes.register(eventBus);
+        VentureParticles.register(eventBus);
+        VenturePaintings.register(eventBus);
+        VentureSoundEvents.register(eventBus);
+        VentureEffects.register(eventBus);
+        VenturePotions.register(eventBus);
         ////////////////////////////////////////////
-        modEventBus.addListener(this::commonSetup);
+        eventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
+        eventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.STINGING_NETTLE.getId(), VentureBlocks.POTTED_STINGING_NETTLE);
         });
     }
 

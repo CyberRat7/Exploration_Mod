@@ -4,10 +4,8 @@ import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.RecordItem;
 import net.venture.cyber2000.Venture;
-import net.venture.cyber2000.common.object.item.AncientArrowItem;
-import net.venture.cyber2000.common.object.item.AncientBowItem;
 import net.venture.cyber2000.core.registry.factory.DefaultItemFactory;
-import net.venture.cyber2000.core.registry.factory.item.FoodItemFactory;
+import net.venture.cyber2000.core.registry.factory.item.EdibleItemFactory;
 import net.venture.cyber2000.core.registry.factory.item.MusicDiscFactory;
 import net.venture.cyber2000.core.registry.factory.item.WeaponFactory;
 import net.venture.cyber2000.core.util.log.LoggingRegistry;
@@ -29,7 +27,7 @@ public class VentureItems {
     public static final RegistryObject<Item> FROZEN_IRON_HORSE_ARMOR = DefaultItemFactory.create("frozen_iron_horse_armor");
     public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = DefaultItemFactory.create("frozen_nautilus_shell");
     public static final RegistryObject<Item> NETTLE_LEAVES = DefaultItemFactory.create("nettle_leaves");
-    public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = FoodItemFactory.createBowl("nettle_soup", 5, 0.5f);
+    public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = EdibleItemFactory.createBowl("nettle_soup", 5, 0.5f);
     public static final RegistryObject<RecordItem> FROZEN_DISC = MusicDiscFactory.create("frozen_disc", VentureSoundEvents.FROZEN_DISC_SOUND, 3, 1240);
 
     //EXPERIMENTAL
