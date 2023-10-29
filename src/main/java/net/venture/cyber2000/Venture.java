@@ -1,8 +1,12 @@
 package net.venture.cyber2000;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.venture.cyber2000.common.object.potion.VentureBrewingRecipe;
 import net.venture.cyber2000.core.registry.object.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,6 +45,11 @@ public class Venture {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.STINGING_NETTLE.getId(), VentureBlocks.POTTED_STINGING_NETTLE);
+
+            BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(Potions.AWKWARD,
+                    VentureItems.NETTLE_LEAVES.get(), VenturePotions.IMMUNITY_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(VenturePotions.IMMUNITY_POTION.get(),
+                    Items.REDSTONE, VenturePotions.LONG_IMMUNITY_POTION.get()));
         });
     }
 

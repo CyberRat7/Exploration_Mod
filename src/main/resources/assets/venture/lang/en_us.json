@@ -9,9 +9,22 @@
   "item.venture.frozen_pufferfish": "Frozen Pufferfish",
   "item.venture.frozen_nautilus_shell": "Frozen Nautilus Shell",
   "item.venture.nettle_leaves": "Nettle Leaves",
-  "block.venture.bag_of_nettle_leaves": "Bag of Nettle Leaves",
   "item.venture.nettle_soup": "Nettle Soup",
-  "block.venture.stinging_nettle": "Stinging Nettle",
   "item.venture.ancient_bow": "Ancient Bow",
-  "item.venture.ancient_arrow": "Ancient Arrow"
+  "item.venture.ancient_arrow": "Ancient Arrow",
+
+  "block.venture.bag_of_nettle_leaves": "Bag of Nettle Leaves",
+  "block.venture.stinging_nettle": "Stinging Nettle",
+
+
+  "effect.venture.immunity": "Immunity",
+
+  "item.minecraft.potion.effect.immunity_potion": "Potion of Immunity",
+  "item.minecraft.potion.effect.long_immunity_potion": "Potion of Immunity",
+  "item.minecraft.splash_potion.effect.immunity_potion": "Splash Potion of Immunity",
+  "item.minecraft.splash_potion.effect.long_immunity_potion": "Splash Potion of Immunity",
+  "item.minecraft.lingering_potion.effect.immunity_potion": "Lingering Potion of Immunity",
+  "item.minecraft.lingering_potion.effect.long_immunity_potion": "Lingering Potion of Immunity",
+  "item.minecraft.tipped_arrow.effect.immunity_potion": "Arrow of Immunity",
+  "item.minecraft.tipped_arrow.effect.long_immunity_potion": "Arrow of Immunity"
 }
