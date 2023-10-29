@@ -23,12 +23,11 @@ public class VentureItems {
     public static final RegistryObject<Item> FROZEN_SALMON = DefaultItemFactory.create("frozen_salmon");
     public static final RegistryObject<Item> FROZEN_COD = DefaultItemFactory.create("frozen_cod");
     public static final RegistryObject<Item> FROZEN_PUFFERFISH = DefaultItemFactory.create("frozen_pufferfish");
-
     public static final RegistryObject<Item> FROZEN_IRON_HORSE_ARMOR = DefaultItemFactory.create("frozen_iron_horse_armor");
     public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = DefaultItemFactory.create("frozen_nautilus_shell");
     public static final RegistryObject<Item> NETTLE_LEAVES = DefaultItemFactory.create("nettle_leaves");
     public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = EdibleItemFactory.createBowl("nettle_soup", 5, 0.5f);
-    public static final RegistryObject<RecordItem> FROZEN_DISC = MusicDiscFactory.create("frozen_disc", VentureSoundEvents.FROZEN_DISC_SOUND, 3, 1240);
+    public static final RegistryObject<RecordItem> MUSIC_DISC_THAW = MusicDiscFactory.create("music_disc_thaw", VentureSoundEvents.MUSIC_DISC_THAW, 3, 6440);
 
     //EXPERIMENTAL
     public static final RegistryObject<Item> ANCIENT_BOW = WeaponFactory.createAncientBow("ancient_bow", new Item.Properties().durability(427).rarity(Rarity.EPIC));

@@ -12,7 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 public class VentureSoundEvents {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, Venture.MOD_ID);
 
-    public static final RegistryObject<SoundEvent> FROZEN_DISC_SOUND = DefaultSoundEventFactory.create("frozen_disc_sound");
+    public static final RegistryObject<SoundEvent> MUSIC_DISC_THAW = DefaultSoundEventFactory.create("music_disc.thaw");
 
     public static void register(IEventBus eventBus) {
         LoggingRegistry.register(SOUND_EVENTS, "sounds", eventBus);

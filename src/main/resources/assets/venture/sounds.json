@@ -1,10 +1,10 @@
 {
-"music_box": {
-"sounds": [
-{
-"name": "venture:frozen_disc_sound",
-"stream": true
-    }
-   ]
+  "music_disc.thaw": {
+    "sounds": [
+      {
+        "name": "venture:records/thaw",
+        "stream": true
+      }
+    ]
   }
 }

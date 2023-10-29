@@ -19,7 +19,7 @@ public class VentureCreativeTabs {
                 VentureItems.NETTLE_LEAVES
         ));
         tabAdder.addAllToTools(List.of(
-                VentureItems.FROZEN_DISC
+                VentureItems.MUSIC_DISC_THAW
         ));
         tabAdder.addAllToCombat(List.of(
                 VentureItems.ANCIENT_BOW

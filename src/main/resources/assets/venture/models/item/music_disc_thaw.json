@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "venture:item/frozen_disc"
+    "layer0": "venture:item/music_disc_thaw"
   }
 }
