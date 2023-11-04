@@ -9,6 +9,10 @@ import net.venture.cyber2000.core.registry.factory.DefaultBlockFactory;
 import java.util.function.Supplier;
 
 public interface PlantableFactory extends DefaultBlockFactory {
+    static <T extends BushBlock> RegistryObject<T> createTypedPlantable(String name, Supplier<T> bushSupplier) {
+        return DefaultBlockFactory.createTyped(name, bushSupplier);
+    }
+
     static RegistryObject<FlowerBlock> createFlower(String name, BlockBehaviour.Properties properties,
                                                     Supplier<MobEffect> mobEffect, int duration) {
         return DefaultBlockFactory.createTyped(name, () -> new FlowerBlock(mobEffect, duration, properties.noOcclusion().noCollission()));
