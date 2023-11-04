@@ -29,7 +29,7 @@ public class StingingNettleBlock extends FlowerBlock {
                 double d1 = Math.abs(entity.getZ() - entity.zOld);
                 if (d0 >= (double)0.003F || d1 >= (double)0.003F) {
                     entity.hurt(level.damageSources().sweetBerryBush(), 1.0F);
-                    ((LivingEntity) entity).addEffect(new MobEffectInstance(VentureEffects.IMMUNITY.get(), 5));
+                    ((LivingEntity) entity).addEffect(new MobEffectInstance(VentureEffects.IMMUNITY.get(), 100));
                 }
             }
         }

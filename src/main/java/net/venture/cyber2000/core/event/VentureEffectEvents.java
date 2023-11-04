@@ -13,7 +13,8 @@ public class VentureEffectEvents {
     @SubscribeEvent
     public static void applyEffects(MobEffectEvent.Applicable event) {
         LivingEntity entity = event.getEntity();
-        if (entity.hasEffect(VentureEffects.IMMUNITY.get())) {
+        if (entity.hasEffect(VentureEffects.IMMUNITY.get())
+                && !event.getEffectInstance().getEffect().equals(VentureEffects.IMMUNITY.get())) {
             event.setResult(Event.Result.DENY);
         }
     }
