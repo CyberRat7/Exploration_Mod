@@ -1,4 +1,5 @@
 {
+  "parent": "minecraft:recipes/root",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -6,7 +7,7 @@
         "items": [
           {
             "items": [
-              "venture:frozen_pufferfish"
+              "venture:frozen_nautilus_shell"
             ]
           }
         ]
@@ -15,7 +16,7 @@
   },
   "rewards": {
     "recipes": [
-      "venture:melt_frozen_pufferfish"
+      "venture:melt_frozen_nautilus_shell"
     ]
   }
 }

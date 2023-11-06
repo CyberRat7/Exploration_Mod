@@ -1,4 +1,5 @@
 {
+  "parent": "minecraft:recipes/root",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -6,7 +7,7 @@
         "items": [
           {
             "items": [
-              "venture:frozen_trident"
+              "venture:nettle_leaves"
             ]
           }
         ]
@@ -15,7 +16,8 @@
   },
   "rewards": {
     "recipes": [
-      "venture:melt_frozen_trident"
+      "venture:nettle_soup_crafting",
+      "venture:bag_of_nettle_leaves_crafting"
     ]
   }
 }

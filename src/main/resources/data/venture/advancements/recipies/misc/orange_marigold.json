@@ -1,4 +1,5 @@
 {
+  "parent": "minecraft:recipes/root",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -6,7 +7,7 @@
         "items": [
           {
             "items": [
-              "venture:nettle_leaves"
+              "venture:orange_marigold"
             ]
           }
         ]
@@ -15,8 +16,7 @@
   },
   "rewards": {
     "recipes": [
-      "venture:nettle_soup_crafting",
-      "venture:bag_of_nettle_leaves_crafting"
+      "venture:orange_dye_from_orange_marigolds"
     ]
   }
 }

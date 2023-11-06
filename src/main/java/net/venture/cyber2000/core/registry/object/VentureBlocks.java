@@ -22,15 +22,15 @@ public class VentureBlocks {
     public static final RegistryObject<FlowerBlock> STINGING_NETTLE = PlantableFactory.createTypedPlantable("stinging_nettle", () ->
             new StingingNettleBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)));
     public static final RegistryObject<FlowerBlock> ORANGE_MARIGOLD = PlantableFactory.createFlower("orange_marigold",
-            BlockBehaviour.Properties.copy(Blocks.ALLIUM), VentureEffects.IMMUNITY, 3);
+            BlockBehaviour.Properties.copy(Blocks.ORANGE_TULIP), VentureEffects.IMMUNITY, 3);
     public static final RegistryObject<FlowerBlock> YELLOW_MARIGOLD = PlantableFactory.createFlower("yellow_marigold",
-            BlockBehaviour.Properties.copy(Blocks.ALLIUM), VentureEffects.IMMUNITY, 3);
+            BlockBehaviour.Properties.copy(Blocks.DANDELION), VentureEffects.IMMUNITY, 3);
     public static final RegistryObject<FlowerPotBlock> POTTED_STINGING_NETTLE = PlantableFactory.createPottedFlower("potted_stinging_nettle", STINGING_NETTLE,
             BlockBehaviour.Properties.copy(Blocks.POTTED_DEAD_BUSH));
     public static final RegistryObject<FlowerPotBlock> POTTED_YELLOW_MARIGOLD = PlantableFactory.createPottedFlower("potted_yellow_marigold", YELLOW_MARIGOLD,
-            BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM));
+            BlockBehaviour.Properties.copy(Blocks.DANDELION));
     public static final RegistryObject<FlowerPotBlock> POTTED_ORANGE_MARIGOLD = PlantableFactory.createPottedFlower("potted_orange_marigold", ORANGE_MARIGOLD,
-            BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM));
+            BlockBehaviour.Properties.copy(Blocks.ORANGE_TULIP));
 
     public static final  RegistryObject<Block> BAG_OF_NETTLE_LEAVES = DefaultBlockFactory.create("bag_of_nettle_leaves", BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL));
 
