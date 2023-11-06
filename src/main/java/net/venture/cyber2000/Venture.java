@@ -45,7 +45,8 @@ public class Venture {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.STINGING_NETTLE.getId(), VentureBlocks.POTTED_STINGING_NETTLE);
-
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.ORANGE_MARIGOLD.getId(), VentureBlocks.POTTED_ORANGE_MARIGOLD);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.YELLOW_MARIGOLD.getId(), VentureBlocks.POTTED_YELLOW_MARIGOLD);
             BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(Potions.AWKWARD,
                     VentureItems.NETTLE_LEAVES.get(), VenturePotions.IMMUNITY_POTION.get()));
             BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(VenturePotions.IMMUNITY_POTION.get(),
