@@ -1,8 +1,6 @@
 package net.venture.cyber2000.core.registry.object;
 
-import net.minecraft.world.item.BowlFoodItem;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.RecordItem;
+import net.minecraft.world.item.*;
 import net.venture.cyber2000.Venture;
 import net.venture.cyber2000.core.registry.factory.DefaultItemFactory;
 import net.venture.cyber2000.core.registry.factory.item.EdibleItemFactory;
@@ -10,7 +8,6 @@ import net.venture.cyber2000.core.registry.factory.item.MusicDiscFactory;
 import net.venture.cyber2000.core.registry.factory.item.WeaponFactory;
 import net.venture.cyber2000.core.util.log.LoggingRegistry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;

@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.venture.cyber2000.common.object.potion.VentureBrewingRecipe;
@@ -47,10 +48,13 @@ public class Venture {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.STINGING_NETTLE.getId(), VentureBlocks.POTTED_STINGING_NETTLE);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.ORANGE_MARIGOLD.getId(), VentureBlocks.POTTED_ORANGE_MARIGOLD);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VentureBlocks.YELLOW_MARIGOLD.getId(), VentureBlocks.POTTED_YELLOW_MARIGOLD);
+
             BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(Potions.AWKWARD,
                     VentureItems.NETTLE_LEAVES.get(), VenturePotions.IMMUNITY_POTION.get()));
             BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(VenturePotions.IMMUNITY_POTION.get(),
                     Items.REDSTONE, VenturePotions.LONG_IMMUNITY_POTION.get()));
+
+            ComposterBlock.COMPOSTABLES.put(VentureItems.NETTLE_LEAVES.get(), 0.30f);
         });
     }
 
