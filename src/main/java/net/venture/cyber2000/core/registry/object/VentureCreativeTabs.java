@@ -16,7 +16,8 @@ public class VentureCreativeTabs {
                 VentureItems.FROZEN_SALMON,
                 VentureItems.FROZEN_PUFFERFISH,
                 VentureItems.FROZEN_IRON_HORSE_ARMOR,
-                VentureItems.NETTLE_LEAVES
+                VentureItems.NETTLE_LEAVES,
+                VentureItems.CHILL_ARMOR_TRIM_SMITHING_TEMPLATE
         ));
         tabAdder.addAllToTools(List.of(
                 VentureItems.MUSIC_DISC_THAW
