@@ -37,6 +37,7 @@ public class Venture {
         VentureSoundEvents.register(eventBus);
         VentureEffects.register(eventBus);
         VenturePotions.register(eventBus);
+        VentureTrimPatterns.register(eventBus);
         ////////////////////////////////////////////
         eventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
