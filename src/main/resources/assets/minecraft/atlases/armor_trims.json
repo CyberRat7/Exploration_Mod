@@ -24,7 +24,10 @@
         "netherite_darker": "trims/color_palettes/netherite_darker",
         "wrappist": "geode_plus:trims/color_palettes/wrappist",
         "celestite": "geode_plus:trims/color_palettes/celestite",
-        "pink_topaz": "geode_plus:trims/color_palettes/pink_topaz"
+        "pink_topaz": "geode_plus:trims/color_palettes/pink_topaz",
+        "silver": "galosphere:trims/color_palettes/silver",
+        "allurite": "galosphere:trims/color_palettes/allurite",
+        "lumiere": "galosphere:trims/color_palettes/lumiere"
       }
     }
   ]
