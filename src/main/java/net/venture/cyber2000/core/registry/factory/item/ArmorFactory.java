@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public interface ArmorFactory extends DefaultItemFactory {
     static RegistryObject<SmithingTemplateItem> create(String name) {
-        return create(name, new ResourceLocation(Venture.MOD_ID, "/trim_pattern/"));
+        return create(name, new ResourceLocation(Venture.MOD_ID, name));
     }
 
     private static RegistryObject<SmithingTemplateItem> create(String name, ResourceLocation resourceLocation) {
