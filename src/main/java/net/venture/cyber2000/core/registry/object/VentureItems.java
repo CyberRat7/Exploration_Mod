@@ -3,6 +3,7 @@ package net.venture.cyber2000.core.registry.object;
 import net.minecraft.world.item.*;
 import net.venture.cyber2000.Venture;
 import net.venture.cyber2000.core.registry.factory.DefaultItemFactory;
+import net.venture.cyber2000.core.registry.factory.item.ArmorFactory;
 import net.venture.cyber2000.core.registry.factory.item.EdibleItemFactory;
 import net.venture.cyber2000.core.registry.factory.item.MusicDiscFactory;
 import net.venture.cyber2000.core.registry.factory.item.WeaponFactory;
@@ -16,7 +17,7 @@ public class VentureItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, Venture.MOD_ID);
 
     public static final RegistryObject<Item> FROZEN_TRIDENT = DefaultItemFactory.create("frozen_trident");
-    public static final RegistryObject<Item> CHILL_ARMOR_TRIM_SMITHING_TEMPLATE = DefaultItemFactory.create("chill_armor_trim_smithing_template");
+    public static final RegistryObject<SmithingTemplateItem> CHILL_ARMOR_TRIM_SMITHING_TEMPLATE = ArmorFactory.create("chill_armor_trim_smithing_template");
     public static final RegistryObject<Item> FROZEN_EMERALD = DefaultItemFactory.create("frozen_emerald");
     public static final RegistryObject<Item> FROZEN_SALMON = DefaultItemFactory.create("frozen_salmon");
     public static final RegistryObject<Item> FROZEN_COD = DefaultItemFactory.create("frozen_cod");
