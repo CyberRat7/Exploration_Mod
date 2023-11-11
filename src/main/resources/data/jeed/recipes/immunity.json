@@ -1,0 +1,9 @@
+{
+  "type": "jeed:effect_provider",
+  "effect": "venture:immunity",
+  "providers": [
+    {
+      "item": "venture:stinging_nettle"
+    }
+  ]
+}
