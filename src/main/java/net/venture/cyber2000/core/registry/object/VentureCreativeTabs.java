@@ -23,15 +23,12 @@ public class VentureCreativeTabs {
                 VentureItems.MUSIC_DISC_THAW
         ));
         tabAdder.addAllToCombat(List.of(
-                VentureItems.ANCIENT_BOW
         ));
         tabAdder.addAllToFood(List.of(
                 VentureItems.NETTLE_SOUP
         ));
         tabAdder.addAllToNaturalBlocks(List.of(
                 VentureBlocks.STINGING_NETTLE,
-                VentureBlocks.YELLOW_MARIGOLD,
-                VentureBlocks.ORANGE_MARIGOLD,
                 VentureBlocks.BAG_OF_NETTLE_LEAVES
         ));
         tabAdder.addAllToBuildingBlocks(List.of(

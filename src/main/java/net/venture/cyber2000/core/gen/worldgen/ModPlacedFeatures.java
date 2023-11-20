@@ -14,10 +14,6 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> STINGING_NETTLE_PLACED = ModPlacedFeatureUtils.createKey("stinging_nettle_placed");
 
-    public static final ResourceKey<PlacedFeature> YELLOW_MARIGOLD_PLACED = ModPlacedFeatureUtils.createKey("yellow_marigold_placed");
-
-    public static final ResourceKey<PlacedFeature> ORANGE_MARIGOLD_PLACED = ModPlacedFeatureUtils.createKey("orange_marigold_placed");
-
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -25,13 +21,6 @@ public class ModPlacedFeatures {
                 List.of(RarityFilter.onAverageOnceEvery(12),
                         InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
-        ModPlacedFeatureUtils.register(context, ORANGE_MARIGOLD_PLACED, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORANGE_MARIGOLD_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(8),
-                        InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
-
-        ModPlacedFeatureUtils.register(context, YELLOW_MARIGOLD_PLACED, configuredFeatures.getOrThrow(ModConfiguredFeatures.YELLOW_MARIGOLD_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(8),
-                        InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
     }
 }
