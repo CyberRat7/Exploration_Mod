@@ -3,8 +3,8 @@
     {
       "type": "paletted_permutations",
       "textures": [
-        "venture:trims/models/armor/chill",
-        "venture:trims/models/armor/chill_leggings"
+        "venturer:trims/models/armor/chill",
+        "venturer:trims/models/armor/chill_leggings"
       ],
       "palette_key": "trims/color_palettes/trim_palette",
       "permutations": {

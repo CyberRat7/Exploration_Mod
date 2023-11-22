@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "venture:frozen_trident"
-  },
-  "result": "minecraft:trident",
-  "experience": 0.15,
-  "cookingtime": 200
-}

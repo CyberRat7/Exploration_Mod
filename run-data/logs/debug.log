@@ -244,7 +244,7 @@
 [06Nov2023 19:51:45.454] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@4667c4c1 - got cpw.mods.cl.ModuleClassLoader@1b9c1b51
 [06Nov2023 19:51:45.454] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.minecraftforge.common.ForgeMod
 [06Nov2023 19:51:45.472] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@4667c4c1 - got cpw.mods.cl.ModuleClassLoader@1b9c1b51
-[06Nov2023 19:51:45.472] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.venture.cyber2000.Venture
+[06Nov2023 19:51:45.472] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.venturer.cyber2000.Venturer
 [06Nov2023 19:51:45.535] [modloading-worker-0/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Forge Version package package net.minecraftforge.versions.forge, Forge, version 47.2 from cpw.mods.modlauncher.TransformingClassLoader@4667c4c1
 [06Nov2023 19:51:45.535] [modloading-worker-0/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Found Forge version 47.2.1
 [06Nov2023 19:51:45.535] [modloading-worker-0/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Found Forge spec 47.2
@@ -254,27 +254,27 @@
 [06Nov2023 19:51:45.537] [modloading-worker-0/DEBUG] [net.minecraftforge.versions.mcp.MCPVersion/CORE]: Found MCP version information 20230612.114412
 [06Nov2023 19:51:45.537] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.1, for MC 1.20.1 with MCP 20230612.114412
 [06Nov2023 19:51:45.541] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.1 Initialized
-[06Nov2023 19:51:45.544] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading items!
-[06Nov2023 19:51:45.544] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
-[06Nov2023 19:51:45.554] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading blocks!
-[06Nov2023 19:51:45.554] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
-[06Nov2023 19:51:45.556] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading entities!
-[06Nov2023 19:51:45.556] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
-[06Nov2023 19:51:45.559] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading particles!
-[06Nov2023 19:51:45.559] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
-[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading paintings!
-[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
-[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading sounds!
-[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
-[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading effects!
-[06Nov2023 19:51:45.563] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
-[06Nov2023 19:51:45.565] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading potions!
-[06Nov2023 19:51:45.565] [modloading-worker-0/INFO] [net.venture.cyber2000.Venture/]: Loading was successfully finished!
+[06Nov2023 19:51:45.544] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading items!
+[06Nov2023 19:51:45.544] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
+[06Nov2023 19:51:45.554] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading blocks!
+[06Nov2023 19:51:45.554] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
+[06Nov2023 19:51:45.556] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading entities!
+[06Nov2023 19:51:45.556] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
+[06Nov2023 19:51:45.559] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading particles!
+[06Nov2023 19:51:45.559] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
+[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading paintings!
+[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
+[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading sounds!
+[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
+[06Nov2023 19:51:45.562] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading effects!
+[06Nov2023 19:51:45.563] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
+[06Nov2023 19:51:45.565] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading potions!
+[06Nov2023 19:51:45.565] [modloading-worker-0/INFO] [net.venturer.cyber2000.Venturer/]: Loading was successfully finished!
 [06Nov2023 19:51:45.590] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for venture
-[06Nov2023 19:51:45.595] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venture.cyber2000.core.event.VentureClientEvents to MOD
-[06Nov2023 19:51:45.607] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venture.cyber2000.core.event.VentureEffectEvents to FORGE
-[06Nov2023 19:51:45.610] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venture.cyber2000.core.event.VentureTradeEvents to FORGE
-[06Nov2023 19:51:45.613] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venture.cyber2000.core.gen.datagen.DataGenerators to MOD
+[06Nov2023 19:51:45.595] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venturer.cyber2000.core.event.VenturerClientEvents to MOD
+[06Nov2023 19:51:45.607] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venturer.cyber2000.core.event.VenturerEffectEvents to FORGE
+[06Nov2023 19:51:45.610] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venturer.cyber2000.core.event.VenturerTradeEvents to FORGE
+[06Nov2023 19:51:45.613] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.venturer.cyber2000.core.gen.datagen.DataGenerators to MOD
 [06Nov2023 19:51:45.650] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: -Dio.netty.noUnsafe: false
 [06Nov2023 19:51:45.650] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: Java version: 17
 [06Nov2023 19:51:45.651] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: sun.misc.Unsafe.theUnsafe: available

@@ -1,0 +1,10 @@
+{
+  "music_disc.thaw": {
+    "sounds": [
+      {
+        "name": "venturer:records/thaw",
+        "stream": true
+      }
+    ]
+  }
+}

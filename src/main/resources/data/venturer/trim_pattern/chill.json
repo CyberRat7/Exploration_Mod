@@ -1,0 +1,7 @@
+{
+  "asset_id": "venturer:chill",
+  "description": {
+    "translate": "trim_pattern.venturer.chill_armor_trim_smithing_template"
+  },
+  "template_item": "venturer:chill_armor_trim_smithing_template"
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "venturer:block/bag_of_nettle_leaves_bottom",
+    "east": "venturer:block/bag_of_nettle_leaves_side",
+    "north": "venturer:block/bag_of_nettle_leaves_side_tied",
+    "particle": "venturer:block/bag_of_nettle_leaves_top",
+    "south": "venturer:block/bag_of_nettle_leaves_side_tied",
+    "up": "venturer:block/bag_of_nettle_leaves_top",
+    "west": "venturer:block/bag_of_nettle_leaves_side"
+  }
+}

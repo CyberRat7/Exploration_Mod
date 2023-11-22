@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "venture:frozen_cod"
-  },
-  "result": "minecraft:cod",
-  "experience": 0.15,
-  "cookingtime": 250
-}

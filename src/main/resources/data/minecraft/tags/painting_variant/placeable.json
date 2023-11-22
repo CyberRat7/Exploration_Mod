@@ -1,19 +1,19 @@
 {
   "values": [
-    "venture:earth_planet",
-    "venture:turtle",
-    "venture:black_heart",
-    "venture:blue_heart",
-    "venture:brown_heart",
-    "venture:dark_blue_heart",
-    "venture:gray_heart",
-    "venture:green_heart",
-    "venture:lime_heart",
-    "venture:orange_heart",
-    "venture:pink_heart",
-    "venture:purple_heart",
-    "venture:red_heart",
-    "venture:white_heart",
-    "venture:yellow_heart"
+    "venturer:earth_planet",
+    "venturer:turtle",
+    "venturer:black_heart",
+    "venturer:blue_heart",
+    "venturer:brown_heart",
+    "venturer:dark_blue_heart",
+    "venturer:gray_heart",
+    "venturer:green_heart",
+    "venturer:lime_heart",
+    "venturer:orange_heart",
+    "venturer:pink_heart",
+    "venturer:purple_heart",
+    "venturer:red_heart",
+    "venturer:white_heart",
+    "venturer:yellow_heart"
   ]
 }
