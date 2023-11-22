@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.venturer.cyber2000.common.object.potion.VentureBrewingRecipe;
+import net.venturer.cyber2000.common.object.potion.*;
 import net.venturer.cyber2000.core.registry.object.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -47,9 +47,9 @@ public class Venturer {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VenturerBlocks.ORANGE_MARIGOLD.getId(), VenturerBlocks.POTTED_ORANGE_MARIGOLD);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VenturerBlocks.YELLOW_MARIGOLD.getId(), VenturerBlocks.POTTED_YELLOW_MARIGOLD);
 
-            BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(Potions.AWKWARD,
+            BrewingRecipeRegistry.addRecipe(new VenturerBrewingRecipe(Potions.AWKWARD,
                     VenturerItems.NETTLE_LEAVES.get(), VenturerPotions.IMMUNITY_POTION.get()));
-            BrewingRecipeRegistry.addRecipe(new VentureBrewingRecipe(VenturerPotions.IMMUNITY_POTION.get(),
+            BrewingRecipeRegistry.addRecipe(new VenturerBrewingRecipe(VenturerPotions.IMMUNITY_POTION.get(),
                     Items.REDSTONE, VenturerPotions.LONG_IMMUNITY_POTION.get()));
 
             ComposterBlock.COMPOSTABLES.put(VenturerItems.NETTLE_LEAVES.get(), 0.30f);

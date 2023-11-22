@@ -11,7 +11,6 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.venturer.cyber2000.core.registry.object.VenturerBlocks;
 import net.venturer.cyber2000.core.util.VenturerConfiguredFeatureUtils;
 
-
 public class VenturerConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> STINGING_NETTLE_KEY = VenturerConfiguredFeatureUtils.createKey("stinging_nettle");
 

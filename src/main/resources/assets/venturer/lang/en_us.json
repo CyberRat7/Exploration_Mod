@@ -21,6 +21,7 @@
   "block.venturer.yellow_marigold": "Yellow Marigold",
 
   "effect.venturer.immunity": "Immunity",
+  "effect.venturer.immunity.description": "Prevents the affected entity from gaining new potion effects.",
 
   "item.minecraft.potion.effect.immunity_potion": "Potion of Immunity",
   "item.minecraft.potion.effect.long_immunity_potion": "Potion of Immunity",

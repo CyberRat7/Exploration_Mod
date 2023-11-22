@@ -14,7 +14,7 @@ import net.venturer.cyber2000.core.util.log.LoggingRegistry;
 public class VenturerEffects {
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, Venturer.MOD_ID);
 
-    public static final RegistryObject<MobEffect> IMMUNITY = DefaultEffectFactory.create("immunity", () -> new ImmunityEffect(MobEffectCategory.NEUTRAL, 0xa2a389));
+    public static final RegistryObject<MobEffect> IMMUNITY = DefaultEffectFactory.create("immunity", () -> new ImmunityEffect(MobEffectCategory.BENEFICIAL, 0xac9c5c));
 
     public static void register(IEventBus eventBus) {
         LoggingRegistry.register(EFFECTS, "effects", eventBus);
