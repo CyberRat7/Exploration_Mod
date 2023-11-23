@@ -18,7 +18,7 @@ public class VenturerPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         VenturerPlacedFeatureUtils.register(context, STINGING_NETTLE_PLACED, configuredFeatures.getOrThrow(VenturerConfiguredFeatures.STINGING_NETTLE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(12),
+                List.of(RarityFilter.onAverageOnceEvery(8),
                         InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
 

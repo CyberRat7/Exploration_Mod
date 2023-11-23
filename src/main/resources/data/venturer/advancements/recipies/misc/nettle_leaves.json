@@ -17,6 +17,7 @@
   "rewards": {
     "recipes": [
       "venturer:nettle_soup_crafting",
+      "farmersdelight:nettle_soup",
       "venturer:bag_of_nettle_leaves_crafting"
     ]
   }
