@@ -1,3 +1,5 @@
-// 1.20.1	2023-11-20T20:17:23.0052101	Registries
-90a8888df8c98b1ae8511325b9960b9f762cb744 data/venture/worldgen/configured_feature/stinging_nettle.json
-e0569a9c84ae2d2752c10d987c4b94d97fbde84c data/venture/worldgen/placed_feature/stinging_nettle_placed.json
+// 1.20.1	2023-11-23T12:43:27.3299969	Registries
+712876dd0e7dd6a1d13934f010a62bdb20a57cf6 data/venturer/worldgen/configured_feature/orange_marigold.json
+c15b6d6d975365c2ce0c2ece78bce45b84dd14cf data/venturer/worldgen/configured_feature/stinging_nettle.json
+b22663e63b949cd7ffe1e0b5c3061c485704b09b data/venturer/worldgen/configured_feature/yellow_marigold.json
+eb81bb9decb730e2bdbf5724b8a3b11cd130874a data/venturer/worldgen/placed_feature/stinging_nettle_placed.json

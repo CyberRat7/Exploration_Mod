@@ -20,7 +20,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_emerald"
+          "name": "venturer:frozen_emerald"
         }
       ]
     },
@@ -32,7 +32,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_cod"
+          "name": "venturer:frozen_cod"
         }
       ]
     },
@@ -42,7 +42,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_trident"
+          "name": "venturer:frozen_trident"
         }
       ]
     },
@@ -54,7 +54,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_pufferfish"
+          "name": "venturer:frozen_pufferfish"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_salmon"
+          "name": "venturer:frozen_salmon"
         }
       ]
     },
@@ -79,7 +79,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_iron_horse_armor"
+          "name": "venturer:frozen_iron_horse_armor"
         }
       ]
     },
@@ -96,7 +96,7 @@
             {
               "type": "minecraft:item",
               "weight": 2,
-              "name": "venture:chill_armor_trim_smithing_template",
+              "name": "venturer:chill_armor_trim_smithing_template",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -113,7 +113,7 @@
             {
               "type": "minecraft:item",
               "weight": 2,
-              "name": "venture:music_disc_thaw"
+              "name": "venturer:music_disc_thaw"
             }
           ]
         }

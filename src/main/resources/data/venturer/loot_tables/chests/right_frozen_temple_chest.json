@@ -10,7 +10,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_trident"
+          "name": "venturer:frozen_trident"
         }
       ]
     },
@@ -23,7 +23,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_nautilus_shell"
+          "name": "venturer:frozen_nautilus_shell"
         }
       ]
     },
@@ -36,7 +36,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_emerald"
+          "name": "venturer:frozen_emerald"
         }
       ]
     },
@@ -59,7 +59,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_salmon"
+          "name": "venturer:frozen_salmon"
         }
       ]
     },
@@ -71,7 +71,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "venture:frozen_cod"
+          "name": "venturer:frozen_cod"
         }
       ]
     }
