@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "venturer:stinging_nettle"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "venturer:nettle_leaves"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}
