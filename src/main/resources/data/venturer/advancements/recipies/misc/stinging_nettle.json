@@ -7,7 +7,7 @@
         "items": [
           {
             "items": [
-              "venturer:nettle_leaves"
+              "venturer:stinging_nettle"
             ]
           }
         ]
@@ -16,10 +16,7 @@
   },
   "rewards": {
     "recipes": [
-      "venturer:nettle_soup_crafting",
-      "farmersdelight:nettle_soup",
-      "venturer:nettle_soup",
-      "venturer:bag_of_nettle_leaves_crafting"
+      "venturer:nettle_leaves_from_cutting_stinging_nettle"
     ]
   }
 }
