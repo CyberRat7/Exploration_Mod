@@ -1,0 +1,19 @@
+{
+  "color": "#87ac57",
+  "containers": [
+    {
+      "filled": [
+        "venturer:nettle_soup"
+      ],
+      "empty": "minecraft:bowl",
+      "capacity": 2
+    }
+  ],
+  "flowing_texture": "moonlight:block/soft_fluids/potion_flow",
+  "food": {
+    "divider": 2,
+    "item": "venturer:nettle_soup"
+  },
+  "from_mod": "venturer",
+  "still_texture": "moonlight:block/soft_fluids/soup_liquid"
+}
