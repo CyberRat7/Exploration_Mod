@@ -16,43 +16,43 @@ public class CreativeTabAdder {
         this.event = event;
     }
 
-    public void addAllToIngredients(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToIngredients(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.INGREDIENTS, registries);
     }
 
-    public void addAllToCombat(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToCombat(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.COMBAT, registries);
     }
 
-    public void addAllToTools(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToTools(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.TOOLS_AND_UTILITIES, registries);
     }
 
-    public void addAllToFood(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToFood(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.FOOD_AND_DRINKS, registries);
     }
 
-    public void addAllToBuildingBlocks(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToBuildingBlocks(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.BUILDING_BLOCKS, registries);
     }
 
-    public void addAllToNaturalBlocks(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToNaturalBlocks(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.NATURAL_BLOCKS, registries);
     }
 
-    public void addAllToColoredBlocks(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToColoredBlocks(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.COLORED_BLOCKS, registries);
     }
 
-    public void addAllToFunctionalBlocks(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToFunctionalBlocks(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.FUNCTIONAL_BLOCKS, registries);
     }
 
-    public void addAllToRedstoneBlocks(List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToRedstoneBlocks(List<Supplier<? extends ItemLike>> registries) {
         addAllToTab(CreativeModeTabs.REDSTONE_BLOCKS, registries);
     }
 
-    public void addAllToTab(ResourceKey<CreativeModeTab> tab, List<Supplier<? extends ItemLike>> registries) {
+    protected void addAllToTab(ResourceKey<CreativeModeTab> tab, List<Supplier<? extends ItemLike>> registries) {
         registries.forEach(registry -> addToCreativeTab(tab, registry));
     }
 
