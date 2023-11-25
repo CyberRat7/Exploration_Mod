@@ -2,6 +2,7 @@ package net.venturer.cyber2000;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -51,6 +52,9 @@ public class Venturer {
                     VenturerItems.NETTLE_LEAVES.get(), VenturerPotions.IMMUNITY_POTION.get()));
             BrewingRecipeRegistry.addRecipe(new VenturerBrewingRecipe(VenturerPotions.IMMUNITY_POTION.get(),
                     Items.REDSTONE, VenturerPotions.LONG_IMMUNITY_POTION.get()));
+
+            PotionBrewing.addMix(Potions.AWKWARD, VenturerItems.NETTLE_LEAVES.get(), VenturerPotions.IMMUNITY_POTION.get());
+            PotionBrewing.addMix(VenturerPotions.IMMUNITY_POTION.get(), Items.REDSTONE, VenturerPotions.LONG_IMMUNITY_POTION.get());
 
             ComposterBlock.COMPOSTABLES.put(VenturerItems.NETTLE_LEAVES.get(), 0.30f);
         });
