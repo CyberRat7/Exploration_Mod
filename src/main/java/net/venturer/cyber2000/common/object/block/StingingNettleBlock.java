@@ -5,16 +5,23 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
+import net.venturer.cyber2000.core.registry.object.VenturerBlocks;
 import net.venturer.cyber2000.core.registry.object.VenturerEffects;
+import net.venturer.cyber2000.core.registry.object.VenturerItems;
 
 @SuppressWarnings("ALL")
 public class StingingNettleBlock extends FlowerBlock {
     public StingingNettleBlock(Properties blockProperties) {
         super(VenturerEffects.IMMUNITY, 6, blockProperties);
+
     }
 
     @Override

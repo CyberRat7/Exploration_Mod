@@ -5,11 +5,21 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.ComposterBlock;
+import net.venturer.cyber2000.core.registry.object.VenturerBlocks;
 import net.venturer.cyber2000.core.registry.object.VenturerItems;
 
 public class CustomItemProperties {
     public static void addCustomItemProperties() {
+//        putCompostable(VenturerBlocks.ORANGE_MARIGOLD.get().asItem(), 0.65f);
+//        putCompostable(VenturerBlocks.YELLOW_MARIGOLD.get().asItem(), 0.65f);
+        putCompostable(VenturerBlocks.STINGING_NETTLE.get().asItem(), 0.65f);
         makeBow(VenturerItems.ANCIENT_BOW.get());
+    }
+
+    private static void putCompostable(ItemLike itemLike, float value) {
+        ComposterBlock.COMPOSTABLES.put(itemLike, value);
     }
 
     private static void makeBow(Item item) {
