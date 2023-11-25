@@ -24,13 +24,13 @@ public class VenturerConfiguredFeatures {
                 new RandomPatchConfiguration(8, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                         new SimpleBlockConfiguration(BlockStateProvider.simple(VenturerBlocks.STINGING_NETTLE.get())))));
 
-        VenturerConfiguredFeatureUtils.register(context, YELLOW_MARIGOLD_KEY, Feature.FLOWER,
-                new RandomPatchConfiguration(16, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockConfiguration(BlockStateProvider.simple(VenturerBlocks.YELLOW_MARIGOLD.get())))));
-
-        VenturerConfiguredFeatureUtils.register(context, ORANGE_MARIGOLD_KEY, Feature.FLOWER,
-                new RandomPatchConfiguration(16, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockConfiguration(BlockStateProvider.simple(VenturerBlocks.ORANGE_MARIGOLD.get())))));
+//        VenturerConfiguredFeatureUtils.register(context, YELLOW_MARIGOLD_KEY, Feature.FLOWER,
+//                new RandomPatchConfiguration(16, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+//                        new SimpleBlockConfiguration(BlockStateProvider.simple(VenturerBlocks.YELLOW_MARIGOLD.get())))));
+//
+//        VenturerConfiguredFeatureUtils.register(context, ORANGE_MARIGOLD_KEY, Feature.FLOWER,
+//                new RandomPatchConfiguration(16, 2, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+//                        new SimpleBlockConfiguration(BlockStateProvider.simple(VenturerBlocks.ORANGE_MARIGOLD.get())))));
 
     }
 }
