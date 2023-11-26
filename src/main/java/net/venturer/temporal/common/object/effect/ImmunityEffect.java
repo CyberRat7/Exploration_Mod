@@ -4,12 +4,12 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 
 public class ImmunityEffect extends MobEffect {
-    public ImmunityEffect(MobEffectCategory pCategory, int pColor) {
-        super(pCategory, pColor);
+    public ImmunityEffect(MobEffectCategory category, int color) {
+        super(category, color);
     }
 
     @Override
-    public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
+    public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;
     }
 }

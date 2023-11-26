@@ -4,14 +4,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.SmithingTemplateItem;
 import net.minecraftforge.registries.RegistryObject;
 import net.venturer.temporal.Venturer;
-import net.venturer.temporal.core.registry.factory.DefaultItemFactory;
+import net.venturer.temporal.core.registry.factory.ItemFactory;
 
-public interface ArmorFactory extends DefaultItemFactory {
-    static RegistryObject<SmithingTemplateItem> create(String name) {
-        return create(name, new ResourceLocation(Venturer.MOD_ID, name));
+public interface ArmorFactory extends ItemFactory {
+    static RegistryObject<SmithingTemplateItem> createSmithingTemplate(String name) {
+        return createSmithingTemplate(name, new ResourceLocation(Venturer.MOD_ID, name));
     }
 
-    private static RegistryObject<SmithingTemplateItem> create(String name, ResourceLocation resourceLocation) {
-        return DefaultItemFactory.createTyped(name, () -> SmithingTemplateItem.createArmorTrimTemplate(resourceLocation));
+    private static RegistryObject<SmithingTemplateItem> createSmithingTemplate(String name, ResourceLocation resourceLocation) {
+        return ItemFactory.createTyped(name, () -> SmithingTemplateItem.createArmorTrimTemplate(resourceLocation));
     }
 }

@@ -2,6 +2,7 @@ package net.venturer.temporal.core.util.creative;
 
 import net.minecraft.world.level.ItemLike;
 import net.venturer.temporal.Venturer;
+import net.venturer.temporal.core.util.log.InfoLoggable;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -72,7 +73,7 @@ public class CreativeTabBuilder {
     }
 
     public void build() {
-        Venturer.logger.info("Creative Tab has been built!");
+        new InfoLoggable("Creative Tabs").log();
     }
 
     public CreativeTabAdder getCreativeTabAdder() {

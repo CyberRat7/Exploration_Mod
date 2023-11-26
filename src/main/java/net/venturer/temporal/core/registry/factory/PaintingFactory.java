@@ -5,7 +5,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import static net.venturer.temporal.core.registry.object.VenturerPaintings.PAINTING_VARIANTS;
 
-public interface DefaultPaintingFactory extends ObjectFactory {
+public interface PaintingFactory extends ObjectFactory {
     static RegistryObject<PaintingVariant> create16x16(String name) {
         return create(name, 16, 16);
     }

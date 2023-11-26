@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 
 import static net.venturer.temporal.core.registry.object.VenturerItems.ITEMS;
 
-public interface DefaultItemFactory extends ObjectFactory {
+public interface ItemFactory extends ObjectFactory {
     static RegistryObject<Item> create(String name) {
         return create(name, () -> new Item(new Item.Properties()));
     }

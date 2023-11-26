@@ -19,17 +19,17 @@ import net.venturer.temporal.core.util.properties.CustomItemProperties;
 @Mod.EventBusSubscriber(modid = Venturer.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class VenturerClientEvents {
     @SubscribeEvent
+    public static void clientSetup(final FMLClientSetupEvent event) {
+        CustomItemProperties.addCustomItemProperties();
+    }
+
+    @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(VenturerEntityTypes.ANCIENT_ARROW.get(), AncientArrowRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-    }
-
-    @SubscribeEvent
-    public static void clientSetup(final FMLClientSetupEvent event) {
-        CustomItemProperties.addCustomItemProperties();
     }
 
     @SubscribeEvent

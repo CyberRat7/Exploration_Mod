@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 import static net.venturer.temporal.core.registry.object.VenturerPotions.POTIONS;
 
-public interface DefaultPotionFactory extends ObjectFactory {
+public interface PotionFactory extends ObjectFactory {
     static RegistryObject<Potion> create(String name, MobEffectInstance mobEffectInstance) {
         return POTIONS.register(name, () -> new Potion(mobEffectInstance));
     }

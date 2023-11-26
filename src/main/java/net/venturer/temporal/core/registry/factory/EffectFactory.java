@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 
 import static net.venturer.temporal.core.registry.object.VenturerEffects.EFFECTS;
 
-public interface DefaultEffectFactory extends ObjectFactory {
+public interface EffectFactory extends ObjectFactory {
     static <T extends MobEffect> RegistryObject<MobEffect> create(String name, Supplier<MobEffect> mobEffectSupplier) {
         return EFFECTS.register(name, mobEffectSupplier);
     }

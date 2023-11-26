@@ -15,7 +15,6 @@ import net.venturer.temporal.core.registry.object.VenturerEffects;
 public class StingingNettleBlock extends FlowerBlock {
     public StingingNettleBlock(Properties blockProperties) {
         super(VenturerEffects.IMMUNITY, 6, blockProperties);
-
     }
 
     @Override
