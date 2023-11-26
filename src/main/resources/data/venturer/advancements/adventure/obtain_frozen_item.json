@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "venturer:frozen_salmon"
+    },
+    "title": {
+      "translate": "advancements.adventure.obtain_frozen_item.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.obtain_frozen_item.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "obtain_sniffer_egg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "venturer:frozen_cod",
+              "venturer:frozen_salmon",
+              "venturer:frozen_emerald",
+              "venturer:frozen_iron_horse_armor",
+              "venturer:frozen_nautilus_shell",
+              "venturer:frozen_trident",
+              "venturer:frozen_pufferfish"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

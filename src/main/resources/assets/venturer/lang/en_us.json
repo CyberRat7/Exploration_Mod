@@ -32,6 +32,9 @@
   "item.minecraft.tipped_arrow.effect.immunity_potion": "Arrow of Immunity",
   "item.minecraft.tipped_arrow.effect.long_immunity_potion": "Arrow of Immunity",
 
+  "advancements.adventure.obtain_frozen_item.title": "Frozen in Time",
+  "advancements.adventure.obtain_frozen_item.description": "Obtain a Frozen Item",
+
   "painting.venturer.earth_planet.title": "Earth",
   "painting.venturer.earth_planet.author": "w4t3rcs",
   "painting.venturer.turtle.title": "Turtle",
