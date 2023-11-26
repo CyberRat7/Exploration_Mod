@@ -67,6 +67,10 @@ public class CreativeTabBuilder {
         return this;
     }
 
+    public static CreativeTabBuilder create(CreativeTabAdder creativeTabAdder) {
+        return new CreativeTabBuilder(creativeTabAdder);
+    }
+
     public void build() {
         Venturer.logger.info("Creative Tab has been built!");
     }
