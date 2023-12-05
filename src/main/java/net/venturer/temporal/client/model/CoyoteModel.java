@@ -8,6 +8,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.venturer.temporal.Venturer;
 import net.venturer.temporal.common.object.entity.Coyote;
 
@@ -42,7 +43,18 @@ public class CoyoteModel<T extends Coyote> extends EntityModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		ModelPart head = this.coyote.getChild("head");
+		head.xRot = headPitch * ((float)Math.PI / 180F);
+		head.yRot = netHeadYaw * ((float)Math.PI / 180F);
 
+		ModelPart leg1 = this.coyote.getChild("leg1");
+		ModelPart leg2 = this.coyote.getChild("leg2");
+		ModelPart leg3 = this.coyote.getChild("leg3");
+		ModelPart leg4 = this.coyote.getChild("leg4");
+		leg1.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+		leg2.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
+		leg3.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
+		leg4.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 	}
 
 	@Override
