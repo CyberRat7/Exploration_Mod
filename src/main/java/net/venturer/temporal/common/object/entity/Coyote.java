@@ -200,7 +200,7 @@ public class Coyote extends Animal implements NeutralMob {
                 if (Coyote.this.getRandom().nextInt(reducedTickDelay(10)) != 0) {
                     return false;
                 } else {
-                    List<ItemEntity> list = Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), Coyote.ALLOWED_ITEMS);
+                    List<ItemEntity> list = Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), ALLOWED_ITEMS);
                     return !list.isEmpty() && Coyote.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty();
                 }
             } else {
@@ -210,7 +210,7 @@ public class Coyote extends Animal implements NeutralMob {
 
         @Override
         public void tick() {
-            List<ItemEntity> list = Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), Coyote.ALLOWED_ITEMS);
+            List<ItemEntity> list = Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), ALLOWED_ITEMS);
             ItemStack itemstack = Coyote.this.getItemBySlot(EquipmentSlot.MAINHAND);
             if (itemstack.isEmpty() && !list.isEmpty()) {
                 Coyote.this.getNavigation().moveTo(list.get(0), 1.2F);
@@ -236,7 +236,7 @@ public class Coyote extends Animal implements NeutralMob {
 
         @Override
         public void start() {
-            List<ItemEntity> list = Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), Coyote.ALLOWED_ITEMS);
+            List<ItemEntity> list = Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), ALLOWED_ITEMS);
             if (!list.isEmpty()) {
                 Coyote.this.getNavigation().moveTo(list.get(0), 1.2F);
             }
