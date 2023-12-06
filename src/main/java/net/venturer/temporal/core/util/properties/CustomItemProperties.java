@@ -12,8 +12,6 @@ import net.venturer.temporal.core.registry.object.VenturerItems;
 
 public class CustomItemProperties {
     public static void addCustomItemProperties() {
-//        putCompostable(VenturerBlocks.ORANGE_MARIGOLD.get().asItem(), 0.65f);
-//        putCompostable(VenturerBlocks.YELLOW_MARIGOLD.get().asItem(), 0.65f);
         putCompostable(VenturerBlocks.STINGING_NETTLE.get().asItem(), 0.65f);
         makeBow(VenturerItems.ANCIENT_BOW.get());
     }
