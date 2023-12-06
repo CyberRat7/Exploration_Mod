@@ -3,6 +3,7 @@ package net.venturer.temporal.client.model;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.WolfModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -44,13 +45,15 @@ public class CoyoteModel<T extends Coyote> extends EntityModel<T> {
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		ModelPart head = this.coyote.getChild("head");
-		head.xRot = headPitch * ((float)Math.PI / 180F);
-		head.yRot = netHeadYaw * ((float)Math.PI / 180F);
-
 		ModelPart leg1 = this.coyote.getChild("leg1");
 		ModelPart leg2 = this.coyote.getChild("leg2");
 		ModelPart leg3 = this.coyote.getChild("leg3");
 		ModelPart leg4 = this.coyote.getChild("leg4");
+		ModelPart tail = this.coyote.getChild("tail");
+
+		tail.zRot = (Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount)/2;
+		head.xRot = headPitch * ((float)Math.PI / 180F);
+		head.yRot = netHeadYaw * ((float)Math.PI / 180F);
 		leg1.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 		leg2.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
 		leg3.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
