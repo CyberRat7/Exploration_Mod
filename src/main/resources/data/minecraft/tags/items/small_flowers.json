@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "venturer:stinging_nettle",
-    "venturer:nettle_leaves",
-    "venturer:yellow_marigold",
-    "venturer:orange_marigold"
+    "venturer:nettle_leaves"
   ]
 }
