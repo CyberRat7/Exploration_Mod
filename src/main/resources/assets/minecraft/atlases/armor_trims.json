@@ -27,7 +27,9 @@
         "pink_topaz": "geode_plus:trims/color_palettes/pink_topaz",
         "silver": "galosphere:trims/color_palettes/silver",
         "allurite": "galosphere:trims/color_palettes/allurite",
-        "lumiere": "galosphere:trims/color_palettes/lumiere"
+        "lumiere": "galosphere:trims/color_palettes/lumiere",
+        "glowworm_silk": "biomesoplenty:trims/color_palettes/glowworm_silk",
+        "rose_quartz": "biomesoplenty:trims/color_palettes/rose_quartz"
       }
     }
   ]
