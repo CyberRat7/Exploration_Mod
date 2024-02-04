@@ -1,11 +1,11 @@
 package net.venturer.temporal.core.event;
 
-import net.minecraft.world.item.Item;
+import com.temporal.api.core.event.fov.BowFOVModifier;
+import com.temporal.api.core.event.fov.FOVModifier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ComputeFovModifierEvent;
@@ -60,20 +60,8 @@ public class VenturerClientEvents {
     }
 
     @SubscribeEvent
-    public void bowFOVModifier(ComputeFovModifierEvent event) {
-        if (isBowItem(event)) {
-            float fov = event.getPlayer().getTicksUsingItem() / 20.0F;
-            if (fov > 1.0F) fov = 1.0F;
-            else fov *= fov;
-            event.setNewFovModifier(event.getFovModifier() * (1.0F - (fov * 0.15F)));
-        }
-    }
-
-    private boolean isBowItem(ComputeFovModifierEvent event) {
-        return checkUsingItem(event, VenturerItems.ANCIENT_BOW.get());
-    }
-
-    private boolean checkUsingItem(ComputeFovModifierEvent event, Item item) {
-        return event.getPlayer().getUseItem().is(item) && event.getPlayer().isUsingItem();
+    public void FOVModifier(ComputeFovModifierEvent event) {
+        FOVModifier bowFOVModifier = new BowFOVModifier();
+        bowFOVModifier.modify(event, VenturerItems.ANCIENT_BOW.get());
     }
 }
