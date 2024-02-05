@@ -2,6 +2,7 @@ package net.venturer.temporal.core.event;
 
 import com.temporal.api.core.event.fov.BowFOVModifier;
 import com.temporal.api.core.event.fov.FOVModifier;
+import com.temporal.api.core.util.properties.TemporalItemProperties;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
@@ -22,14 +23,14 @@ import net.venturer.temporal.client.renderer.CoyoteRenderer;
 import net.venturer.temporal.common.object.particle.AncientStarParticle;
 import net.venturer.temporal.common.object.potion.VenturerBrewingRecipe;
 import net.venturer.temporal.core.registry.object.*;
-import net.venturer.temporal.core.util.properties.CustomItemProperties;
 
 @Mod.EventBusSubscriber(modid = Venturer.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class VenturerClientEvents {
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            CustomItemProperties.addCustomItemProperties();
+            TemporalItemProperties.putCompostable(VenturerBlocks.STINGING_NETTLE.get().asItem(), 0.65f);
+            TemporalItemProperties.makeBow(VenturerItems.ANCIENT_BOW.get());
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VenturerBlocks.STINGING_NETTLE.getId(), VenturerBlocks.POTTED_STINGING_NETTLE);
 

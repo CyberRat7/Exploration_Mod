@@ -76,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    implementation fg.deobf("curse.maven:temporalapi-970291:5081641")
+    implementation fg.deobf("curse.maven:temporalapi-970291:5083309")
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 }
 
