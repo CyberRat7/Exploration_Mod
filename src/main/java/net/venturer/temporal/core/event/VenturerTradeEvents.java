@@ -18,10 +18,10 @@ public class VenturerTradeEvents {
 
     @SubscribeEvent
     public static void addCustomWandererTrade(WandererTradesEvent event) {
-        tradeCustomizer.customize(event, new WandererTrade(
-                new TradingItemHolder(Items.EMERALD, 25),
-                new TradingItemHolder(VenturerItems.ANCIENT_BOW.get(), 1),
-                new WandererTradeDescription(WandererTradeDescription.TradeRarity.RARE, 2, 13, 0.5f)
-        ));
+//        tradeCustomizer.customize(event, new WandererTrade(
+//                new TradingItemHolder(Items.EMERALD, 25),
+//                new TradingItemHolder(VenturerItems.ANCIENT_BOW.get(), 1),
+//                new WandererTradeDescription(WandererTradeDescription.TradeRarity.RARE, 2, 13, 0.5f)
+//        ));
     }
 }
