@@ -1,11 +1,12 @@
 package net.venturer.temporal.core.event;
 
-import net.minecraft.world.item.Item;
+import com.temporal.api.core.event.fov.BowFOVModifier;
+import com.temporal.api.core.event.fov.FOVModifier;
+import com.temporal.api.core.util.properties.TemporalItemProperties;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ComputeFovModifierEvent;
@@ -22,14 +23,14 @@ import net.venturer.temporal.client.renderer.CoyoteRenderer;
 import net.venturer.temporal.common.object.particle.AncientStarParticle;
 import net.venturer.temporal.common.object.potion.VenturerBrewingRecipe;
 import net.venturer.temporal.core.registry.object.*;
-import net.venturer.temporal.core.util.properties.CustomItemProperties;
 
 @Mod.EventBusSubscriber(modid = Venturer.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class VenturerClientEvents {
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            CustomItemProperties.addCustomItemProperties();
+            TemporalItemProperties.putCompostable(VenturerBlocks.STINGING_NETTLE.get().asItem(), 0.65f);
+            TemporalItemProperties.makeBow(VenturerItems.ANCIENT_BOW.get());
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VenturerBlocks.STINGING_NETTLE.getId(), VenturerBlocks.POTTED_STINGING_NETTLE);
 
@@ -60,20 +61,8 @@ public class VenturerClientEvents {
     }
 
     @SubscribeEvent
-    public void bowFOVModifier(ComputeFovModifierEvent event) {
-        if (isBowItem(event)) {
-            float fov = event.getPlayer().getTicksUsingItem() / 20.0F;
-            if (fov > 1.0F) fov = 1.0F;
-            else fov *= fov;
-            event.setNewFovModifier(event.getFovModifier() * (1.0F - (fov * 0.15F)));
-        }
-    }
-
-    private boolean isBowItem(ComputeFovModifierEvent event) {
-        return checkUsingItem(event, VenturerItems.ANCIENT_BOW.get());
-    }
-
-    private boolean checkUsingItem(ComputeFovModifierEvent event, Item item) {
-        return event.getPlayer().getUseItem().is(item) && event.getPlayer().isUsingItem();
+    public void FOVModifier(ComputeFovModifierEvent event) {
+        FOVModifier bowFOVModifier = new BowFOVModifier();
+        bowFOVModifier.modify(event, VenturerItems.ANCIENT_BOW.get());
     }
 }
