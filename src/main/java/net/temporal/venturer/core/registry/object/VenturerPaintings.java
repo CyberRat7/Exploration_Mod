@@ -1,16 +1,12 @@
 package net.temporal.venturer.core.registry.object;
 
-import net.minecraft.core.registries.Registries;
+import com.temporal.api.core.registry.factory.common.PaintingFactory;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-import net.temporal.venturer.Venturer;
-import net.temporal.venturer.core.registry.facade.VenturerPaintingFactoryFacade;
 
 public class VenturerPaintings {
-    public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS = DeferredRegister.create(Registries.PAINTING_VARIANT, Venturer.MOD_ID);
-    public static final VenturerPaintingFactoryFacade PAINTING_FACTORY = VenturerPaintingFactoryFacade.getInstance();
+    public static final PaintingFactory PAINTING_FACTORY = PaintingFactory.getInstance();
 
     public static final RegistryObject<PaintingVariant> EARTH = PAINTING_FACTORY.create32x32("earth_planet");
     public static final RegistryObject<PaintingVariant> TURTLE = PAINTING_FACTORY.create32x16("turtle");
@@ -29,6 +25,6 @@ public class VenturerPaintings {
     public static final RegistryObject<PaintingVariant> YELLOW_HEART = PAINTING_FACTORY.create16x16("yellow_heart");
 
     public static void register(IEventBus eventBus) {
-        PAINTING_VARIANTS.register(eventBus);
+        PAINTING_FACTORY.register(eventBus);
     }
 }

@@ -1,5 +1,7 @@
 package net.temporal.venturer.common.object.entity;
 
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -26,6 +28,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -128,6 +131,21 @@ public class Coyote extends Animal implements NeutralMob {
             return InteractionResult.SUCCESS;
         } else {
             return super.mobInteract(player, hand);
+        }
+    }
+
+    @Override
+    public void handleEntityEvent(byte id) {
+        if (id == 45) {
+            ItemStack itemstack = this.getItemBySlot(EquipmentSlot.MAINHAND);
+            if (!itemstack.isEmpty()) {
+                for(int i = 0; i < 8; ++i) {
+                    Vec3 vec3 = (new Vec3(((double)this.random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D)).xRot(-this.getXRot() * ((float)Math.PI / 180F)).yRot(-this.getYRot() * ((float)Math.PI / 180F));
+                    this.level().addParticle(new ItemParticleOption(ParticleTypes.ITEM, itemstack), this.getX() + this.getLookAngle().x / 2.0D, this.getY(), this.getZ() + this.getLookAngle().z / 2.0D, vec3.x, vec3.y + 0.05D, vec3.z);
+                }
+            }
+        } else {
+            super.handleEntityEvent(id);
         }
     }
 

@@ -29,8 +29,9 @@ public class VenturerClientEvents {
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            TemporalItemProperties.putCompostable(VenturerBlocks.STINGING_NETTLE.get().asItem(), 0.65f);
-            TemporalItemProperties.makeBow(VenturerItems.ANCIENT_BOW.get());
+            TemporalItemProperties temporalItemProperties = TemporalItemProperties.getInstance();
+            temporalItemProperties.putCompostable(VenturerBlocks.STINGING_NETTLE.get().asItem(), 0.65f);
+            temporalItemProperties.makeBow(VenturerItems.ANCIENT_BOW.get());
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VenturerBlocks.STINGING_NETTLE.getId(), VenturerBlocks.POTTED_STINGING_NETTLE);
 
