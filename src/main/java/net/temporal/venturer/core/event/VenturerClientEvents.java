@@ -30,18 +30,10 @@ public class VenturerClientEvents {
     public static void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             TemporalItemProperties temporalItemProperties = TemporalItemProperties.getInstance();
-            temporalItemProperties.putCompostable(VenturerBlocks.STINGING_NETTLE.get().asItem(), 0.65f);
             temporalItemProperties.makeBow(VenturerItems.ANCIENT_BOW.get());
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(VenturerBlocks.STINGING_NETTLE.getId(), VenturerBlocks.POTTED_STINGING_NETTLE);
 
-            BrewingRecipeRegistry.addRecipe(new VenturerBrewingRecipe(Potions.AWKWARD,
-                    VenturerItems.NETTLE_LEAVES.get(), VenturerPotions.IMMUNITY_POTION.get()));
-            BrewingRecipeRegistry.addRecipe(new VenturerBrewingRecipe(VenturerPotions.IMMUNITY_POTION.get(),
-                    Items.REDSTONE, VenturerPotions.LONG_IMMUNITY_POTION.get()));
-
-            PotionBrewing.addMix(Potions.AWKWARD, VenturerItems.NETTLE_LEAVES.get(), VenturerPotions.IMMUNITY_POTION.get());
-            PotionBrewing.addMix(VenturerPotions.IMMUNITY_POTION.get(), Items.REDSTONE, VenturerPotions.LONG_IMMUNITY_POTION.get());
         });
     }
 
