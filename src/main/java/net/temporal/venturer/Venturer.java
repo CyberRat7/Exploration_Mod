@@ -19,7 +19,7 @@ public class Venturer {
 
     public Venturer() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        TemporalEngine.process();
+        TemporalEngine.process(Venturer.class);
         //Registries
         VenturerItems.register(eventBus);
         VenturerBlocks.register(eventBus);
@@ -37,15 +37,12 @@ public class Venturer {
     @SuppressWarnings("unchecked")
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         new SimpleTabAdder(event)
-                .addAllToTab(CreativeModeTabs.INGREDIENTS, VenturerItems.FROZEN_NAUTILUS_SHELL, VenturerItems.FROZEN_COD,
-                        VenturerItems.FROZEN_EMERALD, VenturerItems.FROZEN_TRIDENT,
-                        VenturerItems.FROZEN_SALMON, VenturerItems.FROZEN_PUFFERFISH,
-                        VenturerItems.FROZEN_IRON_HORSE_ARMOR, VenturerItems.NETTLE_LEAVES,
-                        VenturerItems.CHILL_ARMOR_TRIM_SMITHING_TEMPLATE,
-                        VenturerItems.COYOTE_FUR)
+                .addAllToTab(CreativeModeTabs.INGREDIENTS,
+                         VenturerItems.NETTLE_LEAVES,
+                        VenturerItems.CHILL_ARMOR_TRIM_SMITHING_TEMPLATE)
                 .addAllToTab(CreativeModeTabs.TOOLS_AND_UTILITIES, VenturerItems.MUSIC_DISC_THAW)
                 .addAllToTab(CreativeModeTabs.FOOD_AND_DRINKS, VenturerItems.NETTLE_SOUP)
-                .addAllToTab(CreativeModeTabs.NATURAL_BLOCKS, VenturerBlocks.BAG_OF_NETTLE_LEAVES)
-                .addAllToTab(CreativeModeTabs.SPAWN_EGGS, VenturerItems.COYOTE_SPAWN_EGG);
+                .addAllToTab(CreativeModeTabs.NATURAL_BLOCKS, VenturerBlocks.BAG_OF_NETTLE_LEAVES);
+
     }
 }
