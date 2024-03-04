@@ -70,9 +70,13 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 dependencies {
+    implementation fg.deobf("curse.maven:temporalapi-970291:5150949")
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 }
 
