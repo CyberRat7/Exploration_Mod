@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Drowned;
 import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
@@ -29,6 +30,9 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ForgeItemTagsProvider;
+import net.temporal.venturer.core.tags.VenturerTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -62,8 +66,10 @@ public class Coyote extends Animal implements NeutralMob {
         this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::isAngryAt));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::checkForMeatItemInHand));
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Zombie.class, false));
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Husk.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Drowned.class, false));
         this.targetSelector.addGoal(8, new ResetUniversalAngerTargetGoal<>(this, true));
     }
 
@@ -71,7 +77,7 @@ public class Coyote extends Animal implements NeutralMob {
         return Mob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.3F)
                 .add(Attributes.MAX_HEALTH, 7.0D)
-                .add(Attributes.ATTACK_DAMAGE, 5.0D);
+                .add(Attributes.ATTACK_DAMAGE, 2.0D);
     }
 
     @Override
@@ -204,7 +210,13 @@ public class Coyote extends Animal implements NeutralMob {
             }
         }
     }
-
+    
+    public boolean checkForMeatItemInHand(LivingEntity pTarget) {
+        ItemStack main = pTarget.getMainHandItem();
+        ItemStack off = pTarget.getOffhandItem();
+        return main.isEmpty() && off.isEmpty() ? false : (main.is(VenturerTags.Items.EDIBLE) || off.is(VenturerTags.Items.EDIBLE));
+    }
+    
     class SearchForFoodGoal extends Goal {
         public SearchForFoodGoal() {
             this.setFlags(EnumSet.of(Goal.Flag.MOVE));
