@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "venturer:block/juniper_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "venturer:block/juniper_log"
+    },
+    "axis=z": {
+      "model": "venturer:block/juniper_log_horizontal",
+      "x": 90
+    }
+  }
+}

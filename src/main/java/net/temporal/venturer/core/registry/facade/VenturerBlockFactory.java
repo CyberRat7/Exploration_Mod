@@ -1,11 +1,9 @@
 package net.temporal.venturer.core.registry.facade;
 
 import com.temporal.api.core.registry.factory.common.BlockFactory;
-import com.temporal.api.core.registry.factory.extension.block.BushExtension;
-import com.temporal.api.core.registry.factory.extension.block.FlowerExtension;
-import com.temporal.api.core.registry.factory.extension.block.PottedFlowerExtension;
+import com.temporal.api.core.registry.factory.extension.block.*;
 
-public class VenturerBlockFactory extends BlockFactory implements BushExtension, FlowerExtension, PottedFlowerExtension {
+public class VenturerBlockFactory extends BlockFactory implements BushExtension, PressurePlateExtension, FenceExtension, FenceGateExtension, StairExtension, SlabExtension, ButtonExtension, TrapDoorExtension,  FlowerExtension, DoorExtension, LeavesExtension, StrippableFlammableRotatedPillarBlockExtension, FlammableRotatedPillarBlockExtension, PottedFlowerExtension {
     private static volatile VenturerBlockFactory instance;
 
     public static VenturerBlockFactory getInstance() {

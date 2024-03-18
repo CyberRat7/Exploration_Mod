@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "venturer:block/juniper_planks",
+    "side": "venturer:block/juniper_planks",
+    "top": "venturer:block/juniper_planks"
+  }
+}

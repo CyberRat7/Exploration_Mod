@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "venturer:block/juniper_log",
+    "side": "venturer:block/juniper_log"
+  }
+}

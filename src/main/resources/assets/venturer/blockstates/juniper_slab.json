@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "venturer:block/juniper_slab"
+    },
+    "type=double": {
+      "model": "venturer:block/juniper_planks"
+    },
+    "type=top": {
+      "model": "venturer:block/juniper_slab_top"
+    }
+  }
+}
