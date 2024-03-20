@@ -1,0 +1,13 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "venturer:stripped_juniper_wood"
+        }
+      ]
+    }
+  ]
+}

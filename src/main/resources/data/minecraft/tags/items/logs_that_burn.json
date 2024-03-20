@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "venturer:juniper_log",
+    "venturer:stripped_juniper_log"
+  ]
+}

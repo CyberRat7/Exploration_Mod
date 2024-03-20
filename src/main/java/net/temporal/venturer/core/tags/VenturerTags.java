@@ -10,6 +10,8 @@ public class VenturerTags {
 	
 	public static class Items {
 		public static final TagKey<Item> MEATS = (TagKey<Item>) ITEM_TAG_FACTORY.createTag("meats");
+
+		public static final TagKey<Item> JUNIPER_LOGS = (TagKey<Item>) ITEM_TAG_FACTORY.createTag("juniper_logs");
 		public static final TagKey<Item> EDIBLE = (TagKey<Item>) ITEM_TAG_FACTORY.createTag("edible");
 	}
 }

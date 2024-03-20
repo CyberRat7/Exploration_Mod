@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_slab",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "venturer:juniper_planks"
+    }
+  },
+  "result": {
+    "item": "venturer:juniper_slab",
+    "count": 6
+  }
+}

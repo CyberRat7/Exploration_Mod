@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "venturer:juniper_planks"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "venturer:juniper_button",
+      "venturer:juniper_door",
+      "venturer:juniper_trapdoor",
+      "venturer:juniper_fence",
+      "venturer:juniper_fence_gate",
+      "venturer:juniper_pressure_plate",
+      "venturer:juniper_slab",
+      "venturer:juniper_stairs"
+
+    ]
+  }
+}

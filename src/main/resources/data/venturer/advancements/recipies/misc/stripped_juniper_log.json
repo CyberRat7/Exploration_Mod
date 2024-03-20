@@ -7,7 +7,7 @@
         "items": [
           {
             "items": [
-              "venturer:orange_marigold"
+              "venturer:stripped_juniper_log"
             ]
           }
         ]
@@ -16,7 +16,9 @@
   },
   "rewards": {
     "recipes": [
-      "venturer:orange_dye_from_orange_marigolds"
+      "venturer:stripped_juniper_wood",
+      "venturer:juniper_planks"
+
     ]
   }
 }

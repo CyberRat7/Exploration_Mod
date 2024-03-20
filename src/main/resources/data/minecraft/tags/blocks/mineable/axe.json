@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "venturer:juniper_button",
+    "venturer:juniper_door",
+    "venturer:juniper_trapdoor",
+    "venturer:juniper_fence",
+    "venturer:juniper_fence_gate",
+    "venturer:juniper_planks",
+    "venturer:juniper_pressure_plate",
+    "venturer:juniper_slab",
+    "venturer:juniper_stairs"
+  ]
+}
