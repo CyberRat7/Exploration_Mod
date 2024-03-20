@@ -20,7 +20,7 @@ public class VenturerEntityTypes {
 
     public static final RegistryObject<EntityType<Coyote>> COYOTE = EntityTypeFactory.ENTITY_TYPES.register("coyote",
             () -> EntityType.Builder.of(Coyote::new, MobCategory.CREATURE)
-                    .sized(0.6F, 0.85F).clientTrackingRange(10)
+                    .sized(0.6F, 0.7F).clientTrackingRange(10)
                     .build(new ResourceLocation(Venturer.MOD_ID, "coyote").toString()));
 
     public static void register(IEventBus eventBus) {
