@@ -4,14 +4,20 @@ import com.mojang.logging.LogUtils;
 import com.temporal.api.core.engine.TemporalEngine;
 import com.temporal.api.core.event.tab.SimpleTabAdder;
 import com.temporal.api.core.util.properties.TemporalItemProperties;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.temporal.venturer.common.object.entity.Coyote;
 import net.temporal.venturer.common.object.potion.VenturerBrewingRecipe;
 import net.temporal.venturer.core.registry.object.*;
 import net.minecraftforge.common.MinecraftForge;
@@ -43,6 +49,16 @@ public class Venturer {
 
         eventBus.addListener(this::addCreative);
         eventBus.addListener(this::commonSetup);
+        eventBus.addListener(this::registerSpawnPlacement);
+    }
+    
+    // @SubscribeEvent
+    public void registerSpawnPlacement(SpawnPlacementRegisterEvent event) {
+        event.register(VenturerEntityTypes.COYOTE.get(),
+          SpawnPlacements.Type.ON_GROUND,
+          Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+          Animal::checkAnimalSpawnRules,
+          SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 
 
@@ -60,6 +76,7 @@ public class Venturer {
 
             PotionBrewing.addMix(Potions.AWKWARD, VenturerItems.NETTLE_LEAVES.get(), VenturerPotions.IMMUNITY_POTION.get());
             PotionBrewing.addMix(VenturerPotions.IMMUNITY_POTION.get(), Items.REDSTONE, VenturerPotions.LONG_IMMUNITY_POTION.get());
+            // SpawnPlacements.register(VenturerEntityTypes.COYOTE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE, Animal::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         });
     }
 
