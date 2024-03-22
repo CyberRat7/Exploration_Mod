@@ -21,6 +21,8 @@ public class VenturerItems {
     public static final RegistryObject<Item> FROZEN_NAUTILUS_SHELL = ITEM_FACTORY.create("frozen_nautilus_shell");
     public static final RegistryObject<Item> NETTLE_LEAVES = ITEM_FACTORY.create("nettle_leaves");
     public static final RegistryObject<BowlFoodItem> NETTLE_SOUP = ITEM_FACTORY.createBowl("nettle_soup", 5, 0.5f);
+
+    public static final RegistryObject<BowlFoodItem> JUNIPER_BERRIES = ITEM_FACTORY.createBowl("juniper_berries", 1, 0.2f);
     public static final RegistryObject<RecordItem> MUSIC_DISC_THAW = ITEM_FACTORY.createMusicDisc("music_disc_thaw", 3, VenturerSoundEvents.MUSIC_DISC_THAW, 6440);
     public static final RegistryObject<Item> COYOTE_FUR = ITEM_FACTORY.create("coyote_fur");
     public static final RegistryObject<ForgeSpawnEggItem> COYOTE_SPAWN_EGG = ITEM_FACTORY.createSpawnEgg("coyote_spawn_egg", VenturerEntityTypes.COYOTE, 0xC2AEA1, 0x6F5445);

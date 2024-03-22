@@ -23,6 +23,8 @@ public class VenturerBlocks {
     public static final RegistryObject<Block> JUNIPER_PLANKS = BLOCK_FACTORY.create("juniper_planks", BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS));
     public static final RegistryObject<LeavesBlock> JUNIPER_LEAVES = BLOCK_FACTORY.createLeaves("juniper_leaves", BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES));
     public static final RegistryObject<LeavesBlock> FLOWERING_JUNIPER_LEAVES = BLOCK_FACTORY.createLeaves("flowering_juniper_leaves", BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES));
+    public static final RegistryObject<LeavesBlock> FRUITING_JUNIPER_LEAVES = BLOCK_FACTORY.createLeaves("fruiting_juniper_leaves", BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES));
+    public static final RegistryObject<LeavesBlock> BUDDING_JUNIPER_LEAVES = BLOCK_FACTORY.createLeaves("budding_juniper_leaves", BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES));
     public static final RegistryObject<FlammableRotatedPillarBlock> JUNIPER_LOG = BLOCK_FACTORY.createFlammableRotatedPillar( "juniper_log", BlockBehaviour.Properties.copy(Blocks.ACACIA_LOG));
     public static final RegistryObject<FlammableRotatedPillarBlock> JUNIPER_WOOD = BLOCK_FACTORY.createFlammableRotatedPillar( "juniper_wood", BlockBehaviour.Properties.copy(Blocks.ACACIA_WOOD));
     public static final RegistryObject<FlammableRotatedPillarBlock> STRIPPED_JUNIPER_LOG = BLOCK_FACTORY.createFlammableRotatedPillar( "stripped_juniper_log", BlockBehaviour.Properties.copy(Blocks.ACACIA_LOG));

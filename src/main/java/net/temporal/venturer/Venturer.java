@@ -70,8 +70,8 @@ public class Venturer {
                          VenturerItems.NETTLE_LEAVES,
                         VenturerItems.CHILL_ARMOR_TRIM_SMITHING_TEMPLATE)
                 .addAllToTab(CreativeModeTabs.TOOLS_AND_UTILITIES, VenturerItems.MUSIC_DISC_THAW)
-                .addAllToTab(CreativeModeTabs.FOOD_AND_DRINKS, VenturerItems.NETTLE_SOUP)
-                .addAllToTab(CreativeModeTabs.NATURAL_BLOCKS, VenturerBlocks.STINGING_NETTLE,  VenturerBlocks.JUNIPER_ROOTS, VenturerBlocks.RED_SANDY_JUNIPER_ROOTS, VenturerBlocks.JUNIPER_LOG, VenturerBlocks.JUNIPER_LEAVES, VenturerBlocks.FLOWERING_JUNIPER_LEAVES)
+                .addAllToTab(CreativeModeTabs.FOOD_AND_DRINKS, VenturerItems.NETTLE_SOUP, VenturerItems.JUNIPER_BERRIES)
+                .addAllToTab(CreativeModeTabs.NATURAL_BLOCKS, VenturerBlocks.STINGING_NETTLE,  VenturerBlocks.JUNIPER_ROOTS, VenturerBlocks.RED_SANDY_JUNIPER_ROOTS, VenturerBlocks.JUNIPER_LOG, VenturerBlocks.JUNIPER_LEAVES, VenturerBlocks.FLOWERING_JUNIPER_LEAVES, VenturerBlocks.FRUITING_JUNIPER_LEAVES ,VenturerBlocks.BUDDING_JUNIPER_LEAVES)
                 .addAllToTab(CreativeModeTabs.NATURAL_BLOCKS, VenturerBlocks.BAG_OF_NETTLE_LEAVES)
                 .addAllToTab(CreativeModeTabs.BUILDING_BLOCKS, VenturerBlocks.JUNIPER_PLANKS, VenturerBlocks.JUNIPER_DOOR, VenturerBlocks.JUNIPER_TRAPDOOR, VenturerBlocks.JUNIPER_BUTTON, VenturerBlocks.JUNIPER_SLAB, VenturerBlocks.JUNIPER_STAIRS, VenturerBlocks.JUNIPER_FENCE, VenturerBlocks.JUNIPER_FENCE_GATE, VenturerBlocks.JUNIPER_PRESSURE_PLATE, VenturerBlocks.STRIPPED_JUNIPER_LOG, VenturerBlocks.JUNIPER_WOOD, VenturerBlocks.STRIPPED_JUNIPER_WOOD);
 
