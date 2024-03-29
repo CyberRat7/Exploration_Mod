@@ -46,60 +46,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-/*
-
-Coyotes:
-
-Spawns in groups of: 1-3
-
-Spawns in Biomes: Badlands, Wooded Badlands, Eroded Badlands
-
-Health Points: 14
-
-Attack Strength: Easy 4, Normal 5, Hard 7
-
-Can be Bred: False
-
-Drops: 1-3 Experience Orbs
-
-Can be Leashed: True
-
-Behavior / longform goals by Cyber Rat:
-
-Coyotes are a neutral mob and will attack the player when provoked,
-
-DONE - when a coyote turns aggressive towards a player all other coyotes nearby will start attacking the player similar to wolves or zombie piglins.
-DONE - If a coyote detects a player with food in their hand or offhand the coyote will instantly turn aggressive towards that player.
-DONE - If a coyote detects a zombie, husk or drowned nearby it will turn hostile towards the mob and attempt to kill the mob.
-DONE - If a coyote detects a chicken, rabbit or goat nearby the coyote will also attempt to kill those mobs as well.
-
-Zombies, Husks and Drowned will additionally avoid coyotes similar to how skeletons and strays avoid wolves and creepers avoid cats.
-    this.goalSelector.addGoal(3, new AvoidEntityGoal(this, Wolf.class, 6.0F, 1.0, 1.2));
-
-If a coyote notices rotten flesh or an item that falls into "forge:meats" on the ground nearby to it the coyote will stop what ever it is doing (attacking a player or mob) and go to eat the food. The coyote will pick up the food like a fox in its mouth and then consume it restoring 3 points of health to the coyote.
-
-When a coyote at full health eats food on the ground it will get the hearts particle effect and breed with another coyote who does this. Coyotes cannot be bred by hand and can only be bred through this method. And there is a 500s breeding cooldown on this.
-
-Baby coyotes can spawn as well, about as rarely as baby wolves.
-
-After a coyote succesfully kills an entity they will have a 40% chance to do a shake animation when they perform this animation 1-2 coyote fur will drop on the ground.
-
-Coyotes can't be damaged by blocks in a new tag called "prickly blocks" (put sweet berry bushes and cactus in this tag)
-
-
-shortform goals by Jason13
-coyotes spawn on any difficulty like wolves (implements NeutralMob)
-coyotes alert others to being attacked and swarm on the attacker (HurtByTargetGoal)
-coyotes attack players holding food items (this::checkMeatInPlayerHandOrNearby)
-coyotes attack nearby zombies, husks, drowned, chicken, rabbits, and goats (NearestAttackableTargetGoal)
-
-zombies/husks/drowned should avoid coyotes
-
-
-
-
-*/
-
 public class Coyote extends Animal implements NeutralMob {
     private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(Coyote.class, EntityDataSerializers.INT);
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(5, 20);
@@ -107,7 +53,7 @@ public class Coyote extends Animal implements NeutralMob {
     
     private static final Predicate<? super ItemEntity> ALLOWED_ITEMS = (itemEntity -> {
         ItemStack item = itemEntity.getItem();
-        return item.is(Items.ROTTEN_FLESH) || item.getTags().anyMatch(Predicate.isEqual(VenturerTags.Items.MEATS));
+        return item.is(Items.ROTTEN_FLESH) || item.isEdible() || item.getItem() instanceof BowlFoodItem || item.getItem() instanceof BowlFoodItem;
     });
     
     
@@ -133,7 +79,7 @@ public class Coyote extends Animal implements NeutralMob {
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
         
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::isAngryAt));
-        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::checkMeatInPlayerHandOrNearby));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::checkEdibleInPlayerHandOrNearby));
         
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Zombie.class, false));
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Husk.class, false));
@@ -216,7 +162,8 @@ public class Coyote extends Animal implements NeutralMob {
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
-        boolean canEatFood = itemstack.getFoodProperties(this).isMeat();
+        
+        boolean canEatFood = itemstack.isEdible();
         if (this.level().isClientSide) {
             return canEatFood ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else if (canEatFood) {
@@ -249,7 +196,7 @@ public class Coyote extends Animal implements NeutralMob {
     @Override
     public boolean isFood(ItemStack itemStack) {
         Item item = itemStack.getItem();
-        return item.isEdible() && itemStack.getFoodProperties(this).isMeat();
+        return item.isEdible();
     }
 
 
@@ -303,7 +250,7 @@ public class Coyote extends Animal implements NeutralMob {
         }
     }
     
-    public boolean checkMeatInPlayerHandOrNearby(LivingEntity pTarget) {
+    public boolean checkEdibleInPlayerHandOrNearby(LivingEntity pTarget) {
         ItemStack main = pTarget.getMainHandItem();
         ItemStack off = pTarget.getOffhandItem();
         
@@ -315,7 +262,7 @@ public class Coyote extends Animal implements NeutralMob {
         //     }
         // }
         
-        return (!main.isEmpty() || !off.isEmpty()) && (main.is(VenturerTags.Items.EDIBLE) || off.is(VenturerTags.Items.EDIBLE));
+        return (!main.isEmpty() || !off.isEmpty()) && (main.isEdible() || off.isEdible());
     }
     
     class SearchForFoodGoal extends Goal {
@@ -359,9 +306,39 @@ public class Coyote extends Animal implements NeutralMob {
                     // Coyote.this.setInLoveTime(10);
                     
                     ItemStack item = itemToEat.getItem();
+                    
                     Coyote.this.eat(Coyote.this.level(), item);
+                    
+                    if (item.getItem() instanceof BowlFoodItem) {
+                        Coyote.this.level().addFreshEntity(new ItemEntity(Coyote.this.level(), Coyote.this.getBlockX(), Coyote.this.getBlockY(), Coyote.this.getBlockZ(), new ItemStack(Items.BOWL)));
+                    } else if (item.getItem() instanceof BottleItem || item.getItem() instanceof HoneyBottleItem) {
+                        Coyote.this.level().addFreshEntity(new ItemEntity(Coyote.this.level(), Coyote.this.getBlockX(), Coyote.this.getBlockY(), Coyote.this.getBlockZ(), new ItemStack(Items.GLASS_BOTTLE)));
+                    }
+                    
                     SoundEvent eatingSound = Coyote.this.getEatingSound(item);
                     Coyote.this.playSound(eatingSound);
+                    
+                    
+                    if (Coyote.this.canFallInLove() && !Coyote.this.isInLove() && Coyote.this.getInLoveTime() == 0) {
+                        
+                        Coyote.this.setInLove(null);
+                        
+                        
+                        // try (Level level = Coyote.this.level()) {
+                        //
+                        //     if (Coyote.this.level().getNearestPlayer(Coyote.this, 16.0D) != null) {
+                        //         level.broadcastEntityEvent(Coyote.this, EntityEvent.IN_LOVE_HEARTS);
+                        //         Coyote.this.setInLove(Coyote.this.level().getNearestPlayer(Coyote.this, 16.0D));
+                        //     }
+                        // } catch (IOException e) {
+                        //     Venturer.LOGGER.info(Venturer.MOD_ID + ": Coyote not inside a level?");
+                        //     Venturer.LOGGER.info(e.getMessage());
+                        // }
+                    }
+                    
+                    // Coyote.this.level().broadcastEntityEvent(Coyote.this, EntityEvent.IN_LOVE_HEARTS);
+                    
+                    
                     if (Coyote.this.getHealth() != Coyote.this.getAttribute(Attributes.MAX_HEALTH).getValue()) Coyote.this.setHealth(Coyote.this.getHealth() + 1);
                     Coyote.this.removeEffect(MobEffects.HUNGER);
                     Coyote.this.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
