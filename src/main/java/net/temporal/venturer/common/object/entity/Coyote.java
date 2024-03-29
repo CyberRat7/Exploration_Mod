@@ -22,6 +22,9 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Chicken;
+import net.minecraft.world.entity.animal.Rabbit;
+import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Drowned;
 import net.minecraft.world.entity.monster.Husk;
@@ -33,9 +36,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ForgeItemTagsProvider;
+import net.temporal.venturer.core.registry.object.VenturerEntityTypes;
 import net.temporal.venturer.core.tags.VenturerTags;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -43,13 +46,71 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
 
+/*
+
+Coyotes:
+
+Spawns in groups of: 1-3
+
+Spawns in Biomes: Badlands, Wooded Badlands, Eroded Badlands
+
+Health Points: 14
+
+Attack Strength: Easy 4, Normal 5, Hard 7
+
+Can be Bred: False
+
+Drops: 1-3 Experience Orbs
+
+Can be Leashed: True
+
+Behavior / longform goals by Cyber Rat:
+
+Coyotes are a neutral mob and will attack the player when provoked,
+
+DONE - when a coyote turns aggressive towards a player all other coyotes nearby will start attacking the player similar to wolves or zombie piglins.
+DONE - If a coyote detects a player with food in their hand or offhand the coyote will instantly turn aggressive towards that player.
+DONE - If a coyote detects a zombie, husk or drowned nearby it will turn hostile towards the mob and attempt to kill the mob.
+DONE - If a coyote detects a chicken, rabbit or goat nearby the coyote will also attempt to kill those mobs as well.
+
+Zombies, Husks and Drowned will additionally avoid coyotes similar to how skeletons and strays avoid wolves and creepers avoid cats.
+    this.goalSelector.addGoal(3, new AvoidEntityGoal(this, Wolf.class, 6.0F, 1.0, 1.2));
+
+If a coyote notices rotten flesh or an item that falls into "forge:meats" on the ground nearby to it the coyote will stop what ever it is doing (attacking a player or mob) and go to eat the food. The coyote will pick up the food like a fox in its mouth and then consume it restoring 3 points of health to the coyote.
+
+When a coyote at full health eats food on the ground it will get the hearts particle effect and breed with another coyote who does this. Coyotes cannot be bred by hand and can only be bred through this method. And there is a 500s breeding cooldown on this.
+
+Baby coyotes can spawn as well, about as rarely as baby wolves.
+
+After a coyote succesfully kills an entity they will have a 40% chance to do a shake animation when they perform this animation 1-2 coyote fur will drop on the ground.
+
+Coyotes can't be damaged by blocks in a new tag called "prickly blocks" (put sweet berry bushes and cactus in this tag)
+
+
+shortform goals by Jason13
+coyotes spawn on any difficulty like wolves (implements NeutralMob)
+coyotes alert others to being attacked and swarm on the attacker (HurtByTargetGoal)
+coyotes attack players holding food items (this::checkMeatInPlayerHandOrNearby)
+coyotes attack nearby zombies, husks, drowned, chicken, rabbits, and goats (NearestAttackableTargetGoal)
+
+zombies/husks/drowned should avoid coyotes
+
+
+
+
+*/
+
 public class Coyote extends Animal implements NeutralMob {
     private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(Coyote.class, EntityDataSerializers.INT);
-    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(21, 40);
+    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(5, 20);
+    
+    
     private static final Predicate<? super ItemEntity> ALLOWED_ITEMS = (itemEntity -> {
         ItemStack item = itemEntity.getItem();
-        return item.is(Items.ROTTEN_FLESH);
+        return item.is(Items.ROTTEN_FLESH) || item.getTags().anyMatch(Predicate.isEqual(VenturerTags.Items.MEATS));
     });
+    
+    
     @Nullable
     private UUID persistentAngerTarget;
 
@@ -63,17 +124,44 @@ public class Coyote extends Animal implements NeutralMob {
         this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(4, new SearchForFoodGoal());
         this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, true));
+        
         this.goalSelector.addGoal(7, new BreedGoal(this, 1.0D));
+        
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
+        
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::isAngryAt));
-        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::checkForMeatItemInHand));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Player.class, 10, false, false, this::checkMeatInPlayerHandOrNearby));
+        
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Zombie.class, false));
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Husk.class, false));
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Drowned.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Chicken.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Rabbit.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Goat.class, false));
         this.targetSelector.addGoal(8, new ResetUniversalAngerTargetGoal<>(this, true));
+    }
+    
+    @Override
+    public boolean isAngryAt(@NotNull LivingEntity pTarget) {
+        if (!this.canAttack(pTarget)) {
+            return false;
+        } else {
+            
+            for (ItemEntity entity : Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(4.0D))) {
+                ItemStack stack = entity.getItem();
+                if (isFood(stack) || stack.is(Items.ROTTEN_FLESH)) {
+                    Coyote.this.setLastHurtByMob((LivingEntity)null);
+                    Coyote.this.setPersistentAngerTarget((UUID)null);
+                    Coyote.this.setTarget((LivingEntity)null);
+                    Coyote.this.setRemainingPersistentAngerTime(0);
+                }
+            }
+            
+            return pTarget.getType() == EntityType.PLAYER && this.isAngryAtAllPlayers(pTarget.level()) ? true : pTarget.getUUID().equals(this.getPersistentAngerTarget());
+        }
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -169,7 +257,7 @@ public class Coyote extends Animal implements NeutralMob {
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
         // TODO: 02.12.2023
-        return null;
+        return VenturerEntityTypes.COYOTE.get().create(level);
     }
     
 
@@ -215,10 +303,19 @@ public class Coyote extends Animal implements NeutralMob {
         }
     }
     
-    public boolean checkForMeatItemInHand(LivingEntity pTarget) {
+    public boolean checkMeatInPlayerHandOrNearby(LivingEntity pTarget) {
         ItemStack main = pTarget.getMainHandItem();
         ItemStack off = pTarget.getOffhandItem();
-        return main.isEmpty() && off.isEmpty() ? false : (main.is(VenturerTags.Items.EDIBLE) || off.is(VenturerTags.Items.EDIBLE));
+        
+        // for (ItemEntity entity : Coyote.this.level().getEntitiesOfClass(ItemEntity.class, Coyote.this.getBoundingBox().inflate(2.0D))) {
+        //     ItemStack stack = entity.getItem();
+        //     if (isFood(stack) || stack.is(Items.ROTTEN_FLESH)) {
+        //         Coyote.this.forgetCurrentTargetAndRefreshUniversalAnger();
+        //         return false;
+        //     }
+        // }
+        
+        return (!main.isEmpty() || !off.isEmpty()) && (main.is(VenturerTags.Items.EDIBLE) || off.is(VenturerTags.Items.EDIBLE));
     }
     
     class SearchForFoodGoal extends Goal {
@@ -257,6 +354,10 @@ public class Coyote extends Animal implements NeutralMob {
                 Coyote.this.pickUpItem(itemToEat);
                 boolean canEat = Coyote.this.onGround() && Coyote.this.getTarget() == null && Coyote.this.getLastHurtByMob() == null;
                 if (canEat) {
+                    
+                    // Coyote.this.setRemainingPersistentAngerTime(0);
+                    // Coyote.this.setInLoveTime(10);
+                    
                     ItemStack item = itemToEat.getItem();
                     Coyote.this.eat(Coyote.this.level(), item);
                     SoundEvent eatingSound = Coyote.this.getEatingSound(item);
@@ -285,5 +386,10 @@ public class Coyote extends Animal implements NeutralMob {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+    }
+    
+    @Override
+    public boolean canBreed() {
+        return true;
     }
 }

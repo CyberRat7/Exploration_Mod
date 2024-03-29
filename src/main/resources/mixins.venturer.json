@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.temporal.venturer.core.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ZombieAvoidCoyoteMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
